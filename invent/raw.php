@@ -50,7 +50,7 @@
     <a class="navbar-brand" href="index.html">
     <img src="assets/img/logo.png" alt="logo" class="img-responsive"/>
     </a>
-    <form class="search-form search-form-header" role="form" action="http://www.keenthemes.com/preview/conquer/index.html">
+    <form class="search-form search-form-header" role="form" action="">
       <div class="input-icon right">
         <i class="fa fa-search"></i>
         <input type="text" class="form-control input-medium input-sm" name="query" placeholder="Search...">
@@ -525,7 +525,7 @@
           <!-- BEGIN SIDEBAR TOGGLER BUTTON -->
         </li>
         <li>
-          <form class="search-form" role="form" action="http://www.keenthemes.com/preview/conquer/index.html" method="get">
+          <form class="search-form" role="form" action="" method="get">
             <div class="input-icon right">
               <i class="fa fa-search"></i>
               <input type="text" class="form-control input-medium input-sm" name="query" placeholder="Search...">
