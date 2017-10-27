@@ -30,6 +30,7 @@
 <!-- END PAGE LEVEL PLUGIN STYLES -->
 <!-- BEGIN THEME STYLES -->
 <link href="assets/css/style-conquer.css" rel="stylesheet" type="text/css"/>
+<link href="css/mycss.css" rel="stylesheet" type="text/css"/>
 <link href="assets/css/style.css" rel="stylesheet" type="text/css"/>
 <link href="assets/css/style-responsive.css" rel="stylesheet" type="text/css"/>
 <link href="assets/css/plugins.css" rel="stylesheet" type="text/css"/>
@@ -47,8 +48,7 @@
   <!-- BEGIN TOP NAVIGATION BAR -->
   <div class="header-inner">
     <!-- BEGIN LOGO -->
-    <a class="navbar-brand" href="index.php">
-    <img src="" class="img-responsive"/>
+    <a class="brand" href="index.php">
     </a>
     <form class="search-form search-form-header" role="form" action="">
       <div class="input-icon right">
@@ -125,8 +125,8 @@
       <ul class="page-sidebar-menu">
         <li class="sidebar-toggler-wrapper">
           <!-- BEGIN SIDEBAR TOGGLER BUTTON -->
-          <div class="col-md-12">
-          <a class="navbar-brand" href="">
+          <div class="col-md-12" style="background-color:#e7d2bc;">
+          <a class="navbar-brand" href="index.php">
             <img src="images/kapesign.png" width='130' class="img-responsive"/>
           </a>
           </div>
@@ -204,7 +204,7 @@
 </div>
 <!-- END SIDEBAR -->
 <!-- BEGIN CONTENT -->
-<div class="page-content-wrapper">
+<div class="page-content-wrapper" id="sidebar-wrapper">
   <div class="page-content-wrapper">
     <div class="page-content">
       <!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
