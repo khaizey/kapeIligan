@@ -11,31 +11,31 @@
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
 <meta charset="utf-8"/>
-<title>Conquer | Admin Dashboard Template</title>
+<title>KapeIligan</title>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta content="" name="description"/>
 <meta content="" name="author"/>
 <meta name="MobileOptimized" content="320">
 <!-- BEGIN GLOBAL MANDATORY STYLES -->
-<link href="assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
-<link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-<link href="assets/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css"/>
+<link href="../assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+<link href="../assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="../assets/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css"/>
 <!-- END GLOBAL MANDATORY STYLES -->
 <!-- BEGIN PAGE LEVEL PLUGIN STYLES -->
-<link href="assets/plugins/bootstrap-daterangepicker/daterangepicker-bs3.css" rel="stylesheet" type="text/css"/>
-<link href="assets/plugins/fullcalendar/fullcalendar/fullcalendar.css" rel="stylesheet" type="text/css"/>
-<link href="assets/plugins/jqvmap/jqvmap/jqvmap.css" rel="stylesheet" type="text/css"/>
-<link href="assets/plugins/jquery-easy-pie-chart/jquery.easy-pie-chart.css" rel="stylesheet" type="text/css"/>
+<link href="../assets/plugins/bootstrap-daterangepicker/daterangepicker-bs3.css" rel="stylesheet" type="text/css"/>
+<link href="../assets/plugins/fullcalendar/fullcalendar/fullcalendar.css" rel="stylesheet" type="text/css"/>
+<link href="../assets/plugins/jqvmap/jqvmap/jqvmap.css" rel="stylesheet" type="text/css"/>
+<link href="../assets/plugins/jquery-easy-pie-chart/jquery.easy-pie-chart.css" rel="stylesheet" type="text/css"/>
 <!-- END PAGE LEVEL PLUGIN STYLES -->
 <!-- BEGIN THEME STYLES -->
-<link href="assets/css/style-conquer.css" rel="stylesheet" type="text/css"/>
-<link href="assets/css/style.css" rel="stylesheet" type="text/css"/>
-<link href="assets/css/style-responsive.css" rel="stylesheet" type="text/css"/>
-<link href="assets/css/plugins.css" rel="stylesheet" type="text/css"/>
-<link href="assets/css/pages/tasks.css" rel="stylesheet" type="text/css"/>
-<link href="assets/css/themes/default.css" rel="stylesheet" type="text/css" id="style_color"/>
-<link href="assets/css/custom.css" rel="stylesheet" type="text/css"/>
+<link href="../assets/css/style-conquer.css" rel="stylesheet" type="text/css"/>
+<link href="../assets/css/style.css" rel="stylesheet" type="text/css"/>
+<link href="../assets/css/style-responsive.css" rel="stylesheet" type="text/css"/>
+<link href="../assets/css/plugins.css" rel="stylesheet" type="text/css"/>
+<link href="../assets/css/pages/tasks.css" rel="stylesheet" type="text/css"/>
+<link href="../assets/css/themes/default.css" rel="stylesheet" type="text/css" id="style_color"/>
+<link href="../assets/css/custom.css" rel="stylesheet" type="text/css"/>
 <!-- END THEME STYLES -->
 <link rel="shortcut icon" href="favicon.html"/>
 </head>
@@ -48,7 +48,7 @@
   <div class="header-inner">
     <!-- BEGIN LOGO -->
     <a class="navbar-brand" href="index.html">
-    <img src="assets/img/logo.png" alt="logo" class="img-responsive"/>
+    <img src="../assets/img/logo.png" alt="logo" class="img-responsive"/>
     </a>
     <form class="search-form search-form-header" role="form" action="">
       <div class="input-icon right">
@@ -59,7 +59,7 @@
     <!-- END LOGO -->
     <!-- BEGIN RESPONSIVE MENU TOGGLER -->
     <a href="javascript:;" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-    <img src="assets/img/menu-toggler.png" alt=""/>
+    <img src="../assets/img/menu-toggler.png" alt=""/>
     </a>
     <!-- END RESPONSIVE MENU TOGGLER -->
     <!-- BEGIN TOP NAVIGATION MENU -->
@@ -206,7 +206,7 @@
               <li>
                 <a href="inbox14c8.html?a=view">
                 <span class="photo">
-                  <img src="assets/img/avatar2.jpg" alt=""/>
+                  <img src="../assets/img/avatar2.jpg" alt=""/>
                 </span>
                 <span class="subject">
                   <span class="from">
@@ -224,7 +224,7 @@
               <li>
                 <a href="inbox14c8.html?a=view">
                 <span class="photo">
-                  <img src="assets/img/avatar3.jpg" alt=""/>
+                  <img src="../assets/img/avatar3.jpg" alt=""/>
                 </span>
                 <span class="subject">
                   <span class="from">
@@ -242,7 +242,7 @@
               <li>
                 <a href="inbox14c8.html?a=view">
                 <span class="photo">
-                  <img src="assets/img/avatar1.jpg" alt=""/>
+                  <img src="../assets/img/avatar1.jpg" alt=""/>
                 </span>
                 <span class="subject">
                   <span class="from">
@@ -260,7 +260,7 @@
               <li>
                 <a href="inbox14c8.html?a=view">
                 <span class="photo">
-                  <img src="assets/img/avatar2.jpg" alt=""/>
+                  <img src="../assets/img/avatar2.jpg" alt=""/>
                 </span>
                 <span class="subject">
                   <span class="from">
@@ -278,7 +278,7 @@
               <li>
                 <a href="inbox14c8.html?a=view">
                 <span class="photo">
-                  <img src="assets/img/avatar3.jpg" alt=""/>
+                  <img src="../assets/img/avatar3.jpg" alt=""/>
                 </span>
                 <span class="subject">
                   <span class="from">
@@ -464,7 +464,7 @@
       <!-- BEGIN USER LOGIN DROPDOWN -->
       <li class="dropdown user">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-        <img alt="" src="assets/img/avatar3_small.jpg"/>
+        <img alt="" src="../assets/img/avatar3_small.jpg"/>
         <span class="username">
            Nick
         </span>
@@ -532,7 +532,7 @@
             </div>
           </form>
         </li>
-        <li class="start active ">
+        <li class="start">
           <a href="index.html">
           <i class="fa fa-home"></i>
           <span class="title">
@@ -542,7 +542,7 @@
           </span>
           </a>
         </li>
-        <li class="">
+        <li class="active">
           <a href="javascript:;">
           <i class="fa fa-cogs"></i>
           <span class="title">
@@ -552,7 +552,7 @@
           </span>
           </a>
           <ul class="sub-menu">
-            <li>
+            <li class="active">
               <a href="layout_session_timeout.html">
               Raw</a>
             </li>
@@ -618,7 +618,7 @@
         <div class="col-md-12">
           <!-- BEGIN PAGE TITLE & BREADCRUMB-->
           <h3 class="page-title">
-          Dashboard <small>statistics and more</small>
+          Inventory <small>Raw & Products</small>
           </h3>
           <ul class="page-breadcrumb breadcrumb">
             <li>
@@ -627,7 +627,7 @@
               <i class="fa fa-angle-right"></i>
             </li>
             <li>
-              <a href="#">Dashboard</a>
+              <a href="#">Inventory</a>
             </li>
             <li class="pull-right">
               <div id="dashboard-report-range" class="dashboard-date-range tooltips" data-placement="top" data-original-title="Change dashboard date range">
@@ -643,170 +643,55 @@
       </div>
       <!-- END PAGE HEADER-->
       <!-- BEGIN OVERVIEW STATISTIC BARS-->
-      <div class="row stats-overview-cont">
-        <div class="col-md-2 col-sm-4">
-          <div class="stats-overview stat-block">
-            <div class="display stat ok huge">
-              <span class="line-chart">
-                 5, 6, 7, 11, 14, 10, 15, 19, 15, 2
-              </span>
-              <div class="percent">
-                 +66%
+      <!-- BEGIN PAGE CONTENT-->
+      <div class="row">
+        <div class="col-md-12">
+          <!-- BEGIN EXAMPLE TABLE PORTLET-->
+          <div class="portlet box blue">
+            <div class="portlet-title">
+              <div class="caption">
+                <i class="fa fa-edit"></i>Raw Info
               </div>
             </div>
-            <div class="details">
-              <div class="title">
-                 Users
+            <div class="portlet-body">
+              <div class="table-toolbar">
+                <div class="btn-group">
+                  <button id="sample_editable_1_new" class="btn btn-success">
+                  Add Beans <i class="fa fa-plus"></i>
+                  </button>
+                </div>
+                <div class="btn-group">
+                  <button id="sample_editable_1_new" class="btn btn-success">
+                  Add Acquire <i class="fa fa-plus"></i>
+                  </button>
+                </div>
               </div>
-              <div class="numbers">
-                 1360
-              </div>
-            </div>
-            <div class="progress">
-              <span style="width: 40%;" class="progress-bar progress-bar-info" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100">
-                <span class="sr-only">
-                   66% Complete
-                </span>
-              </span>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-2 col-sm-4">
-          <div class="stats-overview stat-block">
-            <div class="display stat good huge">
-              <span class="line-chart">
-                 2,6,8,12, 11, 15, 16, 11, 16, 11, 10, 3, 7, 8, 12, 19
-              </span>
-              <div class="percent">
-                 +16%
-              </div>
-            </div>
-            <div class="details">
-              <div class="title">
-                 Site Visits
-              </div>
-              <div class="numbers">
-                 1800
-              </div>
-              <div class="progress">
-                <span style="width: 16%;" class="progress-bar progress-bar-warning" aria-valuenow="16" aria-valuemin="0" aria-valuemax="100">
-                  <span class="sr-only">
-                     16% Complete
-                  </span>
-                </span>
-              </div>
+              <table class="table table-striped table-bordered table-hover" id="sample_1">
+              <thead>
+                <tr>
+                  <th>
+                    Beans Type
+                  </th>
+                  <th>
+                    Volume
+                  </th>
+                  <th>
+                    Date Delivered
+                  </th>
+                  <th>
+                    Supplier
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+              </tbody>
+              </table>
             </div>
           </div>
-        </div>
-        <div class="col-md-2 col-sm-4">
-          <div class="stats-overview stat-block">
-            <div class="display stat bad huge">
-              <span class="line-chart">
-                 2,6,8,11, 14, 11, 12, 13, 15, 12, 9, 5, 11, 12, 15, 9,3
-              </span>
-              <div class="percent">
-                 +6%
-              </div>
-            </div>
-            <div class="details">
-              <div class="title">
-                 Orders
-              </div>
-              <div class="numbers">
-                 509
-              </div>
-              <div class="progress">
-                <span style="width: 16%;" class="progress-bar progress-bar-success" aria-valuenow="16" aria-valuemin="0" aria-valuemax="100">
-                  <span class="sr-only">
-                     16% Complete
-                  </span>
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-2 col-sm-4">
-          <div class="stats-overview stat-block">
-            <div class="display stat good huge">
-              <span class="bar-chart">
-                 1,4,9,12, 10, 11, 12, 15, 12, 11, 9, 12, 15, 19, 14, 13, 15
-              </span>
-              <div class="percent">
-                 +86%
-              </div>
-            </div>
-            <div class="details">
-              <div class="title">
-                 Revenue
-              </div>
-              <div class="numbers">
-                 1550
-              </div>
-              <div class="progress">
-                <span style="width: 56%;" class="progress-bar progress-bar-warning" aria-valuenow="56" aria-valuemin="0" aria-valuemax="100">
-                  <span class="sr-only">
-                     56% Complete
-                  </span>
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-2 col-sm-4">
-          <div class="stats-overview stat-block">
-            <div class="display stat ok huge">
-              <span class="line-chart">
-                 2,6,8,12, 11, 15, 16, 17, 14, 12, 10, 8, 10, 2, 4, 12, 19
-              </span>
-              <div class="percent">
-                 +72%
-              </div>
-            </div>
-            <div class="details">
-              <div class="title">
-                 Sales
-              </div>
-              <div class="numbers">
-                 9600
-              </div>
-              <div class="progress">
-                <span style="width: 72%;" class="progress-bar progress-bar-danger" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100">
-                  <span class="sr-only">
-                     72% Complete
-                  </span>
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-2 col-sm-4">
-          <div class="stats-overview stat-block">
-            <div class="display stat bad huge">
-              <span class="line-chart">
-                 1,7,9,11, 14, 12, 6, 7, 4, 2, 9, 8, 11, 12, 14, 12, 10
-              </span>
-              <div class="percent">
-                 +15%
-              </div>
-            </div>
-            <div class="details">
-              <div class="title">
-                 Stock
-              </div>
-              <div class="numbers">
-                 2090
-              </div>
-              <div class="progress">
-                <span style="width: 15%;" class="progress-bar progress-bar-success" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">
-                  <span class="sr-only">
-                     15% Complete
-                  </span>
-                </span>
-              </div>
-            </div>
-          </div>
+          <!-- END EXAMPLE TABLE PORTLET-->
         </div>
       </div>
+      <!-- END PAGE CONTENT -->
       
       <div class="clearfix">
       </div>
@@ -839,42 +724,42 @@
 <script src="assets/plugins/respond.min.js"></script>
 <script src="assets/plugins/excanvas.min.js"></script> 
 <![endif]-->
-<script src="assets/plugins/jquery-1.10.2.min.js" type="text/javascript"></script>
-<script src="assets/plugins/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
+<script src="../assets/plugins/jquery-1.10.2.min.js" type="text/javascript"></script>
+<script src="../assets/plugins/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
 <!-- IMPORTANT! Load jquery-ui-1.10.3.custom.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
-<script src="assets/plugins/jquery-ui/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
-<script src="assets/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-<script src="assets/plugins/bootstrap-hover-dropdown/twitter-bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
-<script src="assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
-<script src="assets/plugins/jquery.blockui.min.js" type="text/javascript"></script>
-<script src="assets/plugins/jquery.cokie.min.js" type="text/javascript"></script>
-<script src="assets/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
+<script src="../assets/plugins/jquery-ui/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+<script src="../assets/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="../assets/plugins/bootstrap-hover-dropdown/twitter-bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
+<script src="../assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+<script src="../assets/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+<script src="../assets/plugins/jquery.cokie.min.js" type="text/javascript"></script>
+<script src="../assets/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
 <!-- END CORE PLUGINS -->
 <!-- BEGIN PAGE LEVEL PLUGINS -->
-<script src="assets/plugins/jqvmap/jqvmap/jquery.vmap.js" type="text/javascript"></script>
-<script src="assets/plugins/jqvmap/jqvmap/maps/jquery.vmap.russia.js" type="text/javascript"></script>
-<script src="assets/plugins/jqvmap/jqvmap/maps/jquery.vmap.world.js" type="text/javascript"></script>
-<script src="assets/plugins/jqvmap/jqvmap/maps/jquery.vmap.europe.js" type="text/javascript"></script>
-<script src="assets/plugins/jqvmap/jqvmap/maps/jquery.vmap.germany.js" type="text/javascript"></script>
-<script src="assets/plugins/jqvmap/jqvmap/maps/jquery.vmap.usa.js" type="text/javascript"></script>
-<script src="assets/plugins/jqvmap/jqvmap/data/jquery.vmap.sampledata.js" type="text/javascript"></script>
-<script src="assets/plugins/jquery.peity.min.js" type="text/javascript"></script>
-<script src="assets/plugins/jquery.pulsate.min.js" type="text/javascript"></script>
-<script src="assets/plugins/jquery-knob/js/jquery.knob.js" type="text/javascript"></script>
-<script src="assets/plugins/flot/jquery.flot.js" type="text/javascript"></script>
-<script src="assets/plugins/flot/jquery.flot.resize.js" type="text/javascript"></script>
-<script src="assets/plugins/bootstrap-daterangepicker/moment.min.js" type="text/javascript"></script>
-<script src="assets/plugins/bootstrap-daterangepicker/daterangepicker.js" type="text/javascript"></script>
-<script src="assets/plugins/gritter/js/jquery.gritter.js" type="text/javascript"></script>
+<script src="../assets/plugins/jqvmap/jqvmap/jquery.vmap.js" type="text/javascript"></script>
+<script src="../assets/plugins/jqvmap/jqvmap/maps/jquery.vmap.russia.js" type="text/javascript"></script>
+<script src="../assets/plugins/jqvmap/jqvmap/maps/jquery.vmap.world.js" type="text/javascript"></script>
+<script src="../assets/plugins/jqvmap/jqvmap/maps/jquery.vmap.europe.js" type="text/javascript"></script>
+<script src="../assets/plugins/jqvmap/jqvmap/maps/jquery.vmap.germany.js" type="text/javascript"></script>
+<script src="../assets/plugins/jqvmap/jqvmap/maps/jquery.vmap.usa.js" type="text/javascript"></script>
+<script src="../assets/plugins/jqvmap/jqvmap/data/jquery.vmap.sampledata.js" type="text/javascript"></script>
+<script src="../assets/plugins/jquery.peity.min.js" type="text/javascript"></script>
+<script src="../assets/plugins/jquery.pulsate.min.js" type="text/javascript"></script>
+<script src="../assets/plugins/jquery-knob/js/jquery.knob.js" type="text/javascript"></script>
+<script src="../assets/plugins/flot/jquery.flot.js" type="text/javascript"></script>
+<script src="../assets/plugins/flot/jquery.flot.resize.js" type="text/javascript"></script>
+<script src="../assets/plugins/bootstrap-daterangepicker/moment.min.js" type="text/javascript"></script>
+<script src="../assets/plugins/bootstrap-daterangepicker/daterangepicker.js" type="text/javascript"></script>
+<script src="../assets/plugins/gritter/js/jquery.gritter.js" type="text/javascript"></script>
 <!-- IMPORTANT! fullcalendar depends on jquery-ui-1.10.3.custom.min.js for drag & drop support -->
-<script src="assets/plugins/fullcalendar/fullcalendar/fullcalendar.min.js" type="text/javascript"></script>
-<script src="assets/plugins/jquery-easy-pie-chart/jquery.easy-pie-chart.js" type="text/javascript"></script>
-<script src="assets/plugins/jquery.sparkline.min.js" type="text/javascript"></script>
+<script src="../assets/plugins/fullcalendar/fullcalendar/fullcalendar.min.js" type="text/javascript"></script>
+<script src="../assets/plugins/jquery-easy-pie-chart/jquery.easy-pie-chart.js" type="text/javascript"></script>
+<script src="../assets/plugins/jquery.sparkline.min.js" type="text/javascript"></script>
 <!-- END PAGE LEVEL PLUGINS -->
 <!-- BEGIN PAGE LEVEL SCRIPTS -->
-<script src="assets/scripts/app.js" type="text/javascript"></script>
-<script src="assets/scripts/index.js" type="text/javascript"></script>
-<script src="assets/scripts/tasks.js" type="text/javascript"></script>
+<script src="../assets/scripts/app.js" type="text/javascript"></script>
+<script src="../assets/scripts/index.js" type="text/javascript"></script>
+<script src="../assets/scripts/tasks.js" type="text/javascript"></script>
 <!-- END PAGE LEVEL SCRIPTS -->
 <script>
 jQuery(document).ready(function() {    
