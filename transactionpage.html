@@ -1,0 +1,94 @@
+<script src = "js/jquery-3.2.1.min.js"></script>
+<script src="bootstrap/dis/js/bootstrap.min.js"></script>
+<link href = "bootstrap/dis/css/bootstrap.min.css" rel = "stylesheet">
+
+<div class = "jumbotron">
+</div>
+<div class = "col-md-6">
+<div class = "newdebt">
+<input type = "text" id = "customersearch" name = "customername" placeholder="customer name" onkeyup = "customerinput()" list = "list">
+<datalist id="list">
+</datalist>
+
+<div id = "theproducts">
+</div>
+
+<input type = "number" name = "quantity" id = "quantity" placeholder="amount">
+<button name = "addtodebt" onclick = "adddebtbutton()">Add</button>
+
+<div id = "response">
+</div>
+
+</div>
+</div>
+
+<div class = "col-md-6">
+<div class = "debts">
+<input type = "text" name  = "customerview" placeholder="customer name">
+<div class = "customerlist">
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+   <script type="text/javascript">
+        function codeAddress() {
+            
+      
+        var xmlhttpmain = new XMLHttpRequest();
+        xmlhttpmain.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("theproducts").innerHTML = this.responseText;
+            }
+        };
+         //theid = window.localStorage.getItem("userid");
+        xmlhttpmain.open("GET", "products.php?viewingproducts=1", true);
+        xmlhttpmain.send();
+    
+    }
+            function customerinput() {
+            
+      
+        var xmlhttpmain = new XMLHttpRequest();
+        xmlhttpmain.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("list").innerHTML = this.responseText;
+            }
+        };
+        keysearch = document.getElementById("customersearch").value;
+         //theid = window.localStorage.getItem("userid");
+        xmlhttpmain.open("GET", "products.php?keysearch="+keysearch, true);
+        xmlhttpmain.send();
+    }
+
+          function adddebtbutton() {
+            
+      
+        var xmlhttpmain = new XMLHttpRequest();
+        xmlhttpmain.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("response").innerHTML = this.responseText;
+            }
+        };
+        debtorname = document.getElementById("customersearch").value;
+        productdebt = document.getElementById("productselected").value;
+        productquantity = document.getElementById("quantity").value;
+        debtorid= debtorname.substr(0, debtorname.indexOf('.')); 
+        // alert(debtorid);
+
+         //theid = window.localStorage.getItem("userid");
+        xmlhttpmain.open("GET", "insertproduct.php?debtorid="+debtorid+"&productdebt="+productdebt+"&productquantity="+productquantity, true);
+        xmlhttpmain.send();
+    }
+        
+        window.onload = codeAddress;
+    
+        
+       
+        </script>      
