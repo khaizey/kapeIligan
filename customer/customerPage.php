@@ -41,12 +41,13 @@
 						<td> <?php echo $row['contactNum']; ?> </td>
 						<td> <?php echo $row['email']; ?> </td>
 						<td>
-							<button type="button" onclick="delete()">Delete</button>
-							<button type="submit">Edit</button>
+							<button type="submit" name="delete">Delete</button>
+							<button type="submit" name="edit">Edit</button>
 						</td>
 					</tr>
 				</table>
-			</div>	
+			</div>
+			<a href="addCustomer.php" type="button"> Add Customer </a> 	
 		</div>
 	</body>
 <?php endwhile; ?>
