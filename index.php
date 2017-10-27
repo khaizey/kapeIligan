@@ -47,8 +47,8 @@
   <!-- BEGIN TOP NAVIGATION BAR -->
   <div class="header-inner">
     <!-- BEGIN LOGO -->
-    <a class="navbar-brand" href="index.html">
-    <img src="assets/img/logo.png" alt="logo" class="img-responsive"/>
+    <a class="navbar-brand" href="index.php">
+    <img src="images/kapesign.png" alt="logo" class="img-responsive"/>
     </a>
     <form class="search-form search-form-header" role="form" action="">
       <div class="input-icon right">
@@ -533,7 +533,7 @@
           </form>
         </li>
         <li class="start active ">
-          <a href="index.html">
+          <a href="index.php">
           <i class="fa fa-home"></i>
           <span class="title">
             Dashboard
