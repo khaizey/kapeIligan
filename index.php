@@ -130,8 +130,6 @@
             <img src="images/kapesign.png" width='130' class="img-responsive"/>
           </a>
           </div>
-          <div class="clearfix">
-          </div>
           <!-- BEGIN SIDEBAR TOGGLER BUTTON -->
         </li>
           <div class="sidebar-toggler">

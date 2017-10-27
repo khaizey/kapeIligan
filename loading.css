@@ -1,0 +1,56 @@
+body{
+	margin:0;
+	padding:0;
+	background: #ab8d70;
+}
+h3{
+	font-family: arial;
+	margin-top: 33%;
+	margin-left: 47%;
+}
+.coffee{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform:translate(-50%, -50%);
+	width: 180px;
+	height: 130px;
+	border:6px solid #ab8d70;
+	border-top: 2px solid transparent;
+	border-bottom-left-radius: 50%;
+	border-bottom-right-radius: 50%;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	background: url(images/coffee.png);
+	background-repeat: repeat-x;
+	animation: animate 15s linear infinite;
+	box-shadow: 0 0 0 5px #f1e1d1, 0 10px 35px rgba(0,0,0,1);
+}
+.coffee:before{
+	content: '';
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	border: 6px solid #f1e1d1;
+	right: -68px;
+	top: 20px;
+	border-top-right-radius: 50%;
+	border-bottom-right-radius: 50%;
+}
+@keyframes animate{
+	10%{
+		background-position: 0 100px;
+	}
+	20%{
+		background-position: 0 100px;
+	}
+	50%{
+		background-position: 1000 -70px;
+	}
+	80%{
+		background-position: 2000 -80px;
+	}
+	100%{
+		background-position: 2500 100px;
+	}
+}
