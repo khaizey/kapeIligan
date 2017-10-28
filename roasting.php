@@ -120,8 +120,8 @@
                   <th>Roasting Date</th>
                   <th>Batch Number</th>
                   <th>Supplier</th>
-                  <th>Raw Beans</th>
-                  <th>Roasted Beans</th>
+                  <th>Raw Beans (g)</th>
+                  <th>Roasted Beans (g)</th>
                 </tr>
               </thead>
               <tfoot>
@@ -129,8 +129,8 @@
                   <th>Roasting Date</th>
                   <th>Batch Number</th>
                   <th>Supplier</th>
-                  <th>Raw Beans</th>
-                  <th>Roasted Beans</th>
+                  <th>Raw Beans (g)</th>
+                  <th>Roasted Beans (g)</th>
                 </tr>
               </tfoot>
               <tbody>
