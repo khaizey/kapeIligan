@@ -22,11 +22,7 @@
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
   <!-- Navigation-->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-<<<<<<< HEAD
-    <img src="" alt="logo">
-=======
-    <img src="images/kapesign.png" style="height:50px;padding-right:10px;" alt="logo">
->>>>>>> master
+    <img src="images/logo.png" style="height:50px;padding-right:10px;" alt="logo">
     <a class="navbar-brand" href="index.php">Kape Iligan</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -40,12 +36,10 @@
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Inventory">
-<<<<<<< HEAD
           <a class="nav-link" href="inventory.php">
             <i class="fa fa-fw fa-area-chart"></i>
             <span class="nav-link-text">Inventory</span>
           </a>
-=======
           <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
             <i class="fa fa-fw fa-area-chart"></i>
             <span class="nav-link-text">Inventory</span>
@@ -58,7 +52,6 @@
               <a href="#">Non-Walk In</a>
             </li>
           </ul>
->>>>>>> master
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Roasting Process">
           <a class="nav-link" href="roasting.php">
