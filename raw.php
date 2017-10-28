@@ -15,6 +15,7 @@
   <!-- Page level plugin CSS-->
   <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
   <!-- Custom styles for this template-->
+  <link rel="stylesheet" type="text/css" href="css/style.css">
   <link href="css/sb-admin.css" rel="stylesheet">
 </head>
 
@@ -41,7 +42,7 @@
           </a>
           <ul class="sidenav-second-level collapse" id="collapseComponents">
             <li>
-             <a href="raw.php">Raw Products</a>
+              <a href="raw.php">Raw Products</a>
             </li>
             <li>
               <a href="#">Non-Walk In</a>
@@ -186,76 +187,27 @@
       <!-- Breadcrumbs-->
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <a href="#">Dashboard</a>
+          <a href="#">Transaction</a>
         </li>
-        <li class="breadcrumb-item active">Customers</li>
+        <li class="breadcrumb-item active">Walk In Costumers</li>
       </ol>
       <!-- Example DataTables Card-->
       <div class="card mb-3">
         <div class="card-header">
-          <i class="fa fa-table"></i> Customer List</div>
+          <i class="fa fa-table"></i> Raw Products </div>
         <div class="card-body">
           <div class="table-responsive">
-<!-- begin table -->
-            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-              <thead>
-                <tr>
-                  <th>Customer Name</th>
-                  <th>Ordered Product</th>
-                  <th>Date Ordered</th>
-                  <th>Total Payment</th>
-                  <th>Date Paid</th>
-                  <th>Cash Received</th>
-                  <th>Balance</th>
-                  <th>Transactions</th>
-                </tr>
-              </thead>
-              <tfoot>
-                <tr>
-                  <th>Customer Name</th>
-                  <th>Ordered Product</th>
-                  <th>Date Ordered</th>
-                  <th>Total Payment</th>
-                  <th>Date Paid</th>
-                  <th>Cash Received</th>
-                  <th>Balance</th>
-                  <th>Transactions</th>
-                </tr>
-              </tfoot>
-              <tbody>
-                <tr>
-                  <td>Tiger Nixon</td>
-                  <td>Arabica</td>
-                  <td>2011/04/25</td>
-                  <td>3000</td>
-                  <td>2011/04/25</td>
-                  <td>3,000</td>
-                  <td>0.00</td>
-                  <td><input type="submit" name="edit" class="btn btn-info btn-block" value="View"></td>
-                </tr>
-                <tr>
-                  <td>Garrett Winters</td>
-                  <td>Robusta</td>
-                  <td>2011/04/25</td>
-                  <td>3800</td>
-                  <td>2011/07/25</td>
-                  <td>3,000</td>
-                  <td>800</td>
-                  <td><input type="submit" name="edit" class="btn btn-info btn-block" value="View"></td>
-                </tr>
-                 <tr>
-                  <td>Kharen Garnette</td>
-                  <td>Premium</td>
-                  <td>2011/08/25</td>
-                  <td>1,750</td>
-                  <td>2011/08/25</td>
-                  <td>750</td>
-                  <td>1,000</td>
-                  <td><input type="submit" name="edit" class="btn btn-info btn-block" value="View"></td>
-                </tr>
-              </tbody>
-            </table>
-<!-- end table -->
+<!-- begin form -->
+            <div class="form-group">
+              <label for="cusName">Name:</label>
+              <input type="text" class="form-control" id="cusName">
+            </div>
+            <div class="form-group">
+              <label for="pwd">Password:</label>
+              <input type="password" class="form-control" id="pwd">
+            </div> 
+<!-- end form -->
+
           </div>
         </div>
         <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
