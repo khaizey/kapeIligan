@@ -22,26 +22,26 @@
   <!-- Navigation-->
   <<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
     <img src="" alt="logo">
-    <a class="navbar-brand" href="index.html">Kape Iligan</a>
+    <a class="navbar-brand" href="index.php">Kape Iligan</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-          <a class="nav-link" href="index.html">
+          <a class="nav-link" href="index.php">
             <i class="fa fa-fw fa-dashboard"></i>
             <span class="nav-link-text">Dashboard</span>
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Inventory">
-          <a class="nav-link" href="inventory.html">
+          <a class="nav-link" href="inventory.php">
             <i class="fa fa-fw fa-area-chart"></i>
             <span class="nav-link-text">Inventory</span>
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Customers">
-          <a class="nav-link" href="costumerList.html">
+          <a class="nav-link" href="costumerList.php">
             <i class="fa fa-fw fa-table"></i>
             <span class="nav-link-text">Customers</span>
           </a>
@@ -53,10 +53,10 @@
           </a>
           <ul class="sidenav-second-level collapse" id="collapseComponents">
             <li>
-              <a href="walkIn.html">Walk In</a>
+              <a href="walkIn.php">Walk In</a>
             </li>
             <li>
-              <a href="nonwalkIn.html">Non-Walk In</a>
+              <a href="nonwalkIn.php">Non-Walk In</a>
             </li>
           </ul>
         </li>
