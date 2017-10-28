@@ -15,14 +15,13 @@
   <!-- Page level plugin CSS-->
   <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
   <!-- Custom styles for this template-->
-  <link rel="stylesheet" type="text/css" href="css/style.css">
   <link href="css/sb-admin.css" rel="stylesheet">
 </head>
 
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
   <!-- Navigation-->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-    <img src="images/kapesign.png" style="height:50px;padding-right:10px;" alt="logo">
+   <img src="images/kapesign.png" style="height:50px;padding-right:10px;" alt="logo">
     <a class="navbar-brand" href="index.php">Kape Iligan</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -42,7 +41,7 @@
           </a>
           <ul class="sidenav-second-level collapse" id="collapseComponents">
             <li>
-              <a href="invent/raw.php">Raw Products</a>
+             <a href="invent/raw.php">Raw Products</a>
             </li>
             <li>
               <a href="#">Non-Walk In</a>
@@ -104,27 +103,61 @@
       <!-- Breadcrumbs-->
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <a href="#">Transaction</a>
+          <a href="#">Dashboard</a>
         </li>
-        <li class="breadcrumb-item active">Walk In Costumers</li>
+        <li class="breadcrumb-item active">Roasting Process</li>
       </ol>
       <!-- Example DataTables Card-->
       <div class="card mb-3">
         <div class="card-header">
-          <i class="fa fa-table"></i> Raw Products </div>
+          <i class="fa fa-table"></i></div>
         <div class="card-body">
           <div class="table-responsive">
-<!-- begin form -->
-            <div class="form-group">
-              <label for="cusName">Name:</label>
-              <input type="text" class="form-control" id="cusName">
-            </div>
-            <div class="form-group">
-              <label for="pwd">Password:</label>
-              <input type="password" class="form-control" id="pwd">
-            </div> 
-<!-- end form -->
-
+<!-- begin table -->
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+              <thead>
+                <tr>
+                  <th>Roasting Date</th>
+                  <th>Batch Number</th>
+                  <th>Supplier</th>
+                  <th>Raw Beans</th>
+                  <th>Roasted Beans</th>
+                </tr>
+              </thead>
+              <tfoot>
+                <tr>
+                  <th>Roasting Date</th>
+                  <th>Batch Number</th>
+                  <th>Supplier</th>
+                  <th>Raw Beans</th>
+                  <th>Roasted Beans</th>
+                </tr>
+              </tfoot>
+              <tbody>
+                <tr>
+                  <td>2011/04/25</td>
+                  <td>1</td>
+                  <td>Arabica</td>                  
+                  <td>3000</td>
+                  <td>2011/04/25</td>
+                </tr>
+                <tr>
+                  <td>Garrett Winters</td>
+                  <td>Robusta</td>
+                  <td>2011/04/25</td>
+                  <td>3800</td>
+                  <td>2011/07/25</td>
+                </tr>
+                 <tr>
+                  <td>Kharen Garnette</td>
+                  <td>Premium</td>
+                  <td>2011/08/25</td>
+                  <td>1,750</td>
+                  <td>2011/08/25</td>
+                </tr>
+              </tbody>
+            </table>
+<!-- end table -->
           </div>
         </div>
         <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>

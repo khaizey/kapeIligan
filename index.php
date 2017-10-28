@@ -48,6 +48,13 @@
             </li>
           </ul>
         </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Roasting Process">
+          <a class="nav-link" href="roasting.php">
+            <i class="fa fa-fw fa-wrench"></i>
+            <span class="nav-link-text">Roasting Process</span>
+          </a>
+        </li>
+
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Customers">
           <a class="nav-link" href="costumerList.php">
             <i class="fa fa-fw fa-table"></i>
