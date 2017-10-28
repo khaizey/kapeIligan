@@ -60,20 +60,6 @@
             </li>
           </ul>
         </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Inventory">
-          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
-            <i class="fa fa-fw fa-area-chart"></i>
-            <span class="nav-link-text">Inventory</span>
-          </a>
-          <ul class="sidenav-second-level collapse" id="collapseComponents">
-            <li>
-             <a href="invent/raw.php">Raw Products</a>
-            </li>
-            <li>
-              <a href="#">Non-Walk In</a>
-            </li>
-          </ul>
-        </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Roasting Process">
           <a class="nav-link" href="roasting.php">
             <i class="fa fa-fw fa-wrench"></i>
