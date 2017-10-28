@@ -41,7 +41,7 @@
           </a>
           <ul class="sidenav-second-level collapse" id="collapseComponents">
             <li>
-             <a href="raw.php">Raw Products</a>
+             <a href="invent/raw.php">Raw Products</a>
             </li>
             <li>
               <a href="#">Non-Walk In</a>
