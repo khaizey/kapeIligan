@@ -51,7 +51,7 @@
           </a>
           <ul class="sidenav-second-level collapse" id="collapseComponents">
             <li>
-             <a href="invent/raw.php">Raw Beans</a>
+             <a href="../invent/raw.php">Raw Beans</a>
             </li>
             <li>
               <a href="product.php">Retail Beans</a>

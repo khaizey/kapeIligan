@@ -1,5 +1,5 @@
 <?php   
-    require "lib/class_lib.php";
+    require "../lib/class_lib.php";
     $db = new db_connect();
     $conn = $db->connection_db();
 
@@ -19,14 +19,13 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title>Kape Iligan - Product Inventory Monitoring System</title>
+  <title>Kape Iligan - Product Inventory System</title>
   <!-- Bootstrap core CSS-->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom fonts for this template-->
@@ -60,10 +59,10 @@
           </a>
           <ul class="sidenav-second-level collapse" id="collapseComponents">
             <li>
-             <a href="invent/raw.php">Raw Products</a>
+             <a href="invent/raw.php">Raw Beans</a>
             </li>
             <li>
-              <a href="#">Non-Walk In</a>
+             <a href="product.php">Retail Beans</a>
             </li>
           </ul>
         </li>
@@ -108,7 +107,7 @@
       </ul>
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
+          <a class="nav-link" href="auth/auth.php?logout">
             <i class="fa fa-fw fa-sign-out"></i>Logout</a>
         </li>
       </ul>
@@ -126,7 +125,42 @@
 
       <ol class="breadcrumb">
         <li class="breadcrumb-item active" style="font-size:30px;">Beans on hand</li>
-        <li class="form-control" style="font-size:25px;">Arabica:<br>Robusta: </li>
+        <li class="form-control" style="font-size:25px;"><?php
+            $arabica_total = 0;     
+            $robusta_total = 0;
+              $q_wh_total = "SELECT * FROM rawinvent";  //----- Compute Bean(raw) TOTAL Quantity (+)
+              $res_wh_total = $conn->query($q_wh_total);
+            
+            while ($row_wh_total = $res_wh_total->fetch_assoc()) {
+              if($row_wh_total['beansId']==1){  
+                $robusta_total += $row_wh_total['volAmount'];
+              }
+                else {  $arabica_total += $row_wh_total['volAmount'];   // Arabica:173579 | Robusta:124604
+                }
+            }
+            
+            $q_production_all = "SELECT * FROM production";     //----- Compute Bean(raw) TOTAL Quantity (-)
+              $res_production_all = $conn->query($q_production_all);
+            
+            while ($row_production_all = $res_production_all->fetch_assoc()) {
+                $this_raw_inv = $row_production_all['rawInvent'];  //- this raw_inv (production)
+
+              $q_inv_bean = "SELECT * FROM rawinvent WHERE rawInvent='$this_raw_inv' LIMIT 1";      
+              $res_inv_bean = $conn->query($q_inv_bean);
+              $volumeInput = (float)$row_production_all['volumeInput'];
+                
+                while ($row_inv_bean = $res_inv_bean->fetch_assoc()) {  // Get Bean type
+                    if($row_inv_bean['beansId']==1){
+                      $robusta_total -= $volumeInput;
+                    }
+                    if($row_inv_bean['beansId']==2){
+                      $arabica_total -= $volumeInput;
+                    }
+                  }
+            } 
+            echo 'Robusta: '.$robusta_total.' grams </br>'.'Arabica: '.$arabica_total.' grams </br>';
+            ?> 
+</li>
       </ol>
       <!-- Example DataTables Card-->
       <div class="card mb-3">
@@ -139,7 +173,7 @@
               <thead>
                 <tr>
                   <th>Roasting Date</th>
-                  <th>Supplier</th>
+                  <th>Coffee Source</th>
                   <th>Raw Beans (g)</th>
                   <th>Roasted Beans (g)</th>
                   <th>Action</th>
@@ -148,34 +182,62 @@
               <tfoot>
                 <tr>
                   <th>Roasting Date</th>
-                  <th>Supplier</th>
+                  <th>Coffee Source</th>
                   <th>Raw Beans (g)</th>
                   <th>Roasted Beans (g)</th>
-                  <th></th>
+                  <th>action</th>
                 </tr>
               </tfoot>
               <tbody>
-                <tr>
-                  <td><input type="text" name="dateRoast" class="form-control"></td>
-                  <td><input type="" name="" class="form-control"></td>                  
-                  <td><input type="" name="" class="form-control"></td>
-                  <td><input type="" name="" class="form-control"></td>
-                  <th><input type="submit" name="add" class="btn btn-info btn-block" value="Add"></th>
+                <tr><form method="POST" action="#">
+                  <td>
+                    <input type="text" name="proc_date" class="form-control" value="<?php echo date("Y/m/d"); ?>"/>
+                  </td>
+                  <td>
+                    <select name="proc_coffee" class="form-control">     
+                      <?php                               //----- Compute Bean(raw) TOTAL Quantity
+                      $q_rob_wh = "SELECT * FROM rawinvent WHERE beansId='1' ORDER BY rawInvent DESC LIMIT 1";  
+                      $res_rob_wh = $conn->query($q_rob_wh);
+                        while ($row_rob_wh = $res_rob_wh->fetch_assoc()) {
+                          echo '<option value="'.$row_rob_wh['rawInvent'].'">'.'Robusta'.'</option>';
+                        }
+                      $q_arab_wh = "SELECT * FROM rawinvent WHERE beansId='2' ORDER BY rawInvent DESC LIMIT 1"; 
+                      $res_arab_wh = $conn->query($q_arab_wh);
+                        while ($row_arab_wh = $res_arab_wh->fetch_assoc()) {
+                          echo '<option value="'.$row_arab_wh['rawInvent'].'">'.'Arabica'.'</option>';
+                        }
+                      ?>
+                    </select>
+                  </td>                  
+                  <td><input type="text" name="proc_IN" class="form-control" required></td>
+                  <td><input type="text" name="proc_OUT" class="form-control" required></td>
+                  <td>
+                    <input type="submit" name="ADD" class="btn btn-info btn-block" value="ADD">
+                  </td>
+                  </form>
                 </tr>
-                <tr>
-                  <td>Garrett Winters</td>
-                  <td>2011/04/25</td>
-                  <td>3800</td>
-                  <td>2011/07/25</td>
-                  <th></th>
-                </tr>
-                 <tr>
-                  <td>Kharen Garnette</td>
-                  <td>2011/08/25</td>
-                  <td>1,750</td>
-                  <td>2011/08/25</td>
-                  <th></th>
-                </tr>
+                 <?php
+                    $q_production = "SELECT * FROM production ORDER BY productDate ASC"; //----- Display Production History
+                    $res_production = $conn->query($q_production);
+                    while ($row_production = $res_production->fetch_assoc()) {
+                      $coffee_id = $row_production['rawInvent'];
+                      $q_coffee = "SELECT * FROM rawinvent WHERE rawInvent='$coffee_id'"; 
+                        $res_coffee = $conn->query($q_coffee);
+                      
+                      while ($row_coffee = $res_coffee->fetch_assoc()) {
+                        if($row_coffee['beansId']==1){ $coffee_s = 'Robusta';
+                        }
+                          else{ $coffee_s = 'Arabica'; }
+                      }
+                      echo '<tr>';
+                        echo '<td>'.$row_production['productDate'].'</td>';     
+                        echo '<td>'.$coffee_s.'</td>';
+                        echo '<td>'.$row_production['volumeInput'].'</td>';
+                        echo '<td>'.$row_production['volumeOut'].'</td>';  
+                        echo '<td> <input type="submit" name="ADD" class="btn btn-info btn-block" value="DELETE"><td>' ;  
+                      echo '</tr>';
+                    }
+                  ?>
               </tbody>
             </table>
 <!-- end table -->
@@ -189,7 +251,7 @@
     <footer class="sticky-footer">
       <div class="container">
         <div class="text-center">
-          <small>Copyright © Kape Iligan 2017</small>
+          <small>Copyright © ClearGlass 2017</small>
         </div>
       </div>
     </footer>
@@ -198,23 +260,7 @@
       <i class="fa fa-angle-up"></i>
     </a>
     <!-- Logout Modal-->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">×</span>
-            </button>
-          </div>
-          <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-          <div class="modal-footer">
-            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-            <a class="btn btn-primary" href="login.html">Logout</a>
-          </div>
-        </div>
-      </div>
-    </div>
+    
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
