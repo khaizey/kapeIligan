@@ -5,7 +5,7 @@
 # Project name:                                                          #
 # Author:                                                                #
 # Script type:           Database creation script                        #
-# Created on:            2017-10-29 02:27                                #
+# Created on:            2017-10-29 08:35                                #
 # ---------------------------------------------------------------------- #
 
 
@@ -89,6 +89,17 @@ CREATE TABLE `accntsPayable` (
     `customerId` INTEGER NOT NULL,
     `productId` INTEGER NOT NULL,
     CONSTRAINT `PK_accntsPayable` PRIMARY KEY (`accntsId`)
+);
+
+# ---------------------------------------------------------------------- #
+# Add table "admin"                                                      #
+# ---------------------------------------------------------------------- #
+
+CREATE TABLE `admin` (
+    `adminID` INTEGER NOT NULL AUTO_INCREMENT,
+    `username` VARCHAR(40),
+    `password` VARCHAR(100),
+    CONSTRAINT `PK_admin` PRIMARY KEY (`adminID`)
 );
 
 # ---------------------------------------------------------------------- #

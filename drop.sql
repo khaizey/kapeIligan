@@ -5,7 +5,7 @@
 # Project name:                                                          #
 # Author:                                                                #
 # Script type:           Database drop script                            #
-# Created on:            2017-10-29 02:27                                #
+# Created on:            2017-10-29 08:35                                #
 # ---------------------------------------------------------------------- #
 
 
@@ -38,6 +38,20 @@ ALTER TABLE `Mix` MODIFY `mixId` INTEGER NOT NULL;
 ALTER TABLE `Mix` DROP PRIMARY KEY;
 
 DROP TABLE `Mix`;
+
+# ---------------------------------------------------------------------- #
+# Drop table "admin"                                                     #
+# ---------------------------------------------------------------------- #
+
+# Remove autoinc for PK drop #
+
+ALTER TABLE `admin` MODIFY `adminID` INTEGER NOT NULL;
+
+# Drop constraints #
+
+ALTER TABLE `admin` DROP PRIMARY KEY;
+
+DROP TABLE `admin`;
 
 # ---------------------------------------------------------------------- #
 # Drop table "accntsPayable"                                             #
