@@ -62,7 +62,7 @@
              <a href="../invent/raw.php">Raw Beans</a>
             </li>
             <li>
-             <a href="../product.php">Retail Beans</a>
+             <a href="../product/packProduct.php">Retail Beans</a>
             </li>
           </ul>
         </li>
@@ -235,7 +235,7 @@
                         echo '<td>'.$coffee_s.'</td>';
                         echo '<td>'.$row_production['volumeInput'].'</td>';
                         echo '<td>'.$row_production['volumeOut'].'</td>';  
-                        // echo '<td> <input type="submit" name="ADD" class="btn btn-info btn-block" value="DELETE"><td>' ;  
+                        echo '<td> <input type="submit" name="ADD" class="btn btn-info btn-block" value="DELETE"><td>' ;  
                       echo '</tr>';
                     }
                   ?>

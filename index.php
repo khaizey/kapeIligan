@@ -77,7 +77,7 @@
           </a>
           <ul class="sidenav-second-level collapse" id="collapseExamplePages">
             <li>
-              <a href="Transaction">Product Order</a>
+              <a href="transaction/index.php">Product Order</a>
             </li>
           </ul>
         </li>
@@ -114,7 +114,7 @@
         <li class="breadcrumb-item active">My Dashboard</li>
       </ol>
       <!-- Icon Cards-->
-      <div class="row">
+      <!-- <div class="row">
         <div class="col-xl-3 col-sm-6 mb-3">
           <div class="card text-white bg-primary o-hidden h-100">
             <div class="card-body">
@@ -180,7 +180,7 @@
           </div>
         </div>
 
-      </div>
+      </div> -->
       <!-- Area Chart Example-->
       <div class="card mb-3">
         <div class="card-header">

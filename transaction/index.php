@@ -83,13 +83,6 @@
             </li>
           </ul>
         </li>
-
-        <!-- <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
-          <a class="nav-link" href="#">
-            <i class="fa fa-fw fa-link"></i>
-            <span class="nav-link-text">hapt na</span>
-          </a>
-        </li> -->
       </ul>
       <ul class="navbar-nav sidenav-toggler">
         <li class="nav-item">
@@ -100,7 +93,7 @@
       </ul>
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link" href="auth/auth.php?logout">
+          <a class="nav-link" href="../auth/auth.php?logout">
             <i class="fa fa-fw fa-sign-out"></i>Logout</a>
         </li>
       </ul>
@@ -111,7 +104,7 @@
       <!-- Breadcrumbs-->
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <a href="#">Dashboard</a>
+          <a href="../index.php">Dashboard</a>
         </li>
         <li class="breadcrumb-item active">Product Order</li>
       </ol>
@@ -132,6 +125,7 @@
                         <div class="input-group">
                           <input type = "text" class="form-control" id = "customersearch" name = "customername" placeholder="customer name" onkeyup = "customerinput()" list = "list">
                           <datalist id="list">
+
                           </datalist>
                         </div>
                       </div>
@@ -265,7 +259,7 @@
     <a class="scroll-to-top rounded" href="#page-top">
       <i class="fa fa-angle-up"></i>
     </a>
-    <div class="modal fade" id="debtsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="display: none;">
+   <!--  <div class="modal fade" id="debtsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="display: none;">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -283,7 +277,7 @@
             <a class="btn btn-primary" href="login.html">Logout</a>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
     
     <!-- Bootstrap core JavaScript-->
