@@ -7,13 +7,13 @@
 	    echo "<script>window.location = '../auth';</script>";
 	  }
 	
-	if(isset($_POST['proc_date'])) {
+	if(isset($_POST['proc_date'])) {	
 		$new_date =$_POST['proc_date'];
 		$new_coffee =$_POST['proc_coffee'];
 		$new_in =$_POST['proc_IN'];
 		$new_out =$_POST['proc_OUT'];
 			
-		$conn->query("INSERT INTO production(rawInvent, volumeInput, volumeOut, productDate) 
+		$conn->query("INSERT INTO production(rawInvent, volumeInput, volumeOut, dateAcquired) 
 				VALUES('$new_coffee', '$new_in', '$new_out', '$new_date')");
 	}	
 ?>
@@ -39,7 +39,7 @@
   <?php
 	$arabica_total = 0;			
 	$robusta_total = 0;
-		$q_wh_total = "SELECT * FROM rawinvent";	//----- Compute Bean(raw) TOTAL Quantity
+		$q_wh_total = "SELECT * FROM rawinvent";	//----- Compute Bean(raw) TOTAL Quantity (+)
 		$res_wh_total = $conn->query($q_wh_total);
 	
 	while ($row_wh_total = $res_wh_total->fetch_assoc()) {
@@ -48,7 +48,27 @@
 		}
 			else {	$arabica_total += $row_wh_total['volAmount'];
 			}
-	}	  
+	}
+	/*
+	$q_production_all = "SELECT * FROM production";			//----- Compute Bean(raw) TOTAL Quantity (-)
+		$res_production_all = $conn->query($q_production_all);
+	
+	while ($row_production_all = $res_production_all->fetch_assoc()) {
+		$this_raw_inv = $row_production_all['rawInvent'];  //- this raw_inv (production)
+		
+		$q_inv_bean = "SELECT * FROM rawinvent";			
+		$res_inv_bean = $conn->query($q_inv_bean);
+			while ($row_inv_bean = $res_inv_bean->fetch_assoc()) {
+				if($row_inv_bean['beansId']){
+					
+					
+				}
+			
+			
+			}
+		
+	}
+	*/
 	
 	echo 'Robusta: '.$robusta_total.'</br>'.'Arabica: '.$arabica_total.'</br>';
   ?> 
