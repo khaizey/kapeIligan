@@ -21,7 +21,11 @@
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
   <!-- Navigation-->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+<<<<<<< HEAD
     <img src="" alt="logo">
+=======
+    <img src="images/kapesign.png" style="height:50px;padding-right:10px;" alt="logo">
+>>>>>>> master
     <a class="navbar-brand" href="index.php">Kape Iligan</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -141,7 +145,11 @@
               <div class="card-body-icon">
                 <i class="fa fa-fw fa-shopping-cart"></i>
               </div>
+<<<<<<< HEAD
               <div class="mr-5">123 New Orders!</div>
+=======
+              <div class="mr-5"> New Orders!</div>
+>>>>>>> master
             </div>
             <a class="card-footer text-white clearfix small z-1" href="#">
               <span class="float-left">View Details</span>
@@ -172,7 +180,11 @@
     <footer class="sticky-footer">
       <div class="container">
         <div class="text-center">
+<<<<<<< HEAD
           <small>Copyright © Your Website 2017</small>
+=======
+          <small>Copyright © Kape Iligan 2017</small>
+>>>>>>> master
         </div>
       </div>
     </footer>
