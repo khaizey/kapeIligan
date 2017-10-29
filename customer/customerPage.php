@@ -97,7 +97,6 @@
 							</form>
 						</td>
 					</tr>
-<<<<<<< HEAD
 					<?php endwhile;
 						if(isset($_POST['del'])){
 							$dele = $_POST['remove'];
@@ -109,10 +108,7 @@
 								echo '<script>window.open("customerPage.php","_self")</script>';
 							}
 						}
-					?> 	
-=======
->>>>>>> 2885447adb20656165ef63f0e1d096b04c9c2d66
-					<?php endwhile; ?> 	
+					?> 	 	
 				</table>
 			</div>
 		</div>
