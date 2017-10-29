@@ -160,7 +160,7 @@
                   <th>Action</th>
                 </tr>
               </thead>
-              <tfoot>
+              <!-- <tfoot>
                 <tr>
                    <th>Product</th>
                   <th>100 grams</th>
@@ -169,7 +169,7 @@
                   <th>1 kilogram</th>
                   <th>Action</th>
                 </tr>
-              </tfoot>
+              </tfoot> -->
               <tbody>
                 <tr>
                   <form method="post" action="#">
@@ -219,7 +219,7 @@
     if($row_premium_pkg['productVolume']=='100'){ $prem_100 += $row_premium_pkg['productQty'];}
     if($row_premium_pkg['productVolume']=='250'){ $prem_250 += $row_premium_pkg['productQty'];}
     if($row_premium_pkg['productVolume']=='500'){ $prem_500 += $row_premium_pkg['productQty'];}
-    if($row_premium_pkg['productVolume']=='1000'){  $prem_1000 += $row_premium_pkg['productQty'];}
+    if($row_premium_pkg['productVolume']=='1000'){ $prem_1000 += $row_premium_pkg['productQty'];}
   }
   ?>
   <tr><td>Robusta</td>
