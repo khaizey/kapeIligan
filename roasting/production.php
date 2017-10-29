@@ -13,7 +13,7 @@
 		$new_in =$_POST['proc_IN'];
 		$new_out =$_POST['proc_OUT'];
 			
-		$conn->query("INSERT INTO production(rawInvent, volumeInput, volumeOut, dateAcquired) 
+		$conn->query("INSERT INTO production(rawInvent, volumeInput, volumeOut, productDate) 
 				VALUES('$new_coffee', '$new_in', '$new_out', '$new_date')");
 	}	
 ?>
@@ -46,30 +46,28 @@
 		if($row_wh_total['beansId']==1){ 	
 			$robusta_total += $row_wh_total['volAmount'];
 		}
-			else {	$arabica_total += $row_wh_total['volAmount'];
+			else {	$arabica_total += $row_wh_total['volAmount'];		// Arabica:173579 | Robusta:124604
 			}
 	}
-	/*
+	
 	$q_production_all = "SELECT * FROM production";			//----- Compute Bean(raw) TOTAL Quantity (-)
 		$res_production_all = $conn->query($q_production_all);
 	
 	while ($row_production_all = $res_production_all->fetch_assoc()) {
-		$this_raw_inv = $row_production_all['rawInvent'];  //- this raw_inv (production)
-		
-		$q_inv_bean = "SELECT * FROM rawinvent";			
+			$this_raw_inv = $row_production_all['rawInvent'];  //- this raw_inv (production)
+
+		$q_inv_bean = "SELECT * FROM rawinvent WHERE rawInvent='$this_raw_inv' LIMIT 1";			
 		$res_inv_bean = $conn->query($q_inv_bean);
-			while ($row_inv_bean = $res_inv_bean->fetch_assoc()) {
-				if($row_inv_bean['beansId']){
-					
-					
+			
+			while ($row_inv_bean = $res_inv_bean->fetch_assoc()) {	// Get Bean type
+				if($row_inv_bean['beansId']==1){
+					$robusta_total -= $row_production_all['volumeInput'];
 				}
-			
-			
+				if($row_inv_bean['beansId']==2){
+					$arabica_total -= $row_production_all['volumeInput'];
+				}
 			}
-		
-	}
-	*/
-	
+	}	
 	echo 'Robusta: '.$robusta_total.'</br>'.'Arabica: '.$arabica_total.'</br>';
   ?> 
   
