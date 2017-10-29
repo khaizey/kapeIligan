@@ -123,6 +123,11 @@
         </li>
         <li class="breadcrumb-item active">Roasting Process</li>
       </ol>
+
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item active" style="font-size:30px;">Beans on hand</li>
+        <li class="form-control" style="font-size:25px;">Arabica:<br>Robusta: </li>
+      </ol>
       <!-- Example DataTables Card-->
       <div class="card mb-3">
         <div class="card-header">
