@@ -82,7 +82,6 @@
 						<th> Action</th>
 					</tr>
 					<?php while($row = mysqli_fetch_array($sql)):?>
-					<?php echo $row['']; ?>
 					<tr>
 						<td> <?php echo $row['cosLastname']; ?> </td>
 						<td> <?php echo $row['cosFirstname']; ?> </td>
@@ -97,11 +96,7 @@
 							</form>
 						</td>
 					</tr>
-					<?php endwhile; 
-						if(isset($_POST['del'])){
-
-						}
-					?> 	
+					<?php endwhile; ?> 	
 				</table>
 			</div>
 		</div>
