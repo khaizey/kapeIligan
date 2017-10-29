@@ -97,6 +97,7 @@
 							</form>
 						</td>
 					</tr>
+<<<<<<< HEAD
 					<?php endwhile;
 						if(isset($_POST['del'])){
 							$dele = $_POST['remove'];
@@ -109,6 +110,8 @@
 							}
 						}
 					?> 	
+=======
+>>>>>>> 2885447adb20656165ef63f0e1d096b04c9c2d66
 					<?php endwhile; ?> 	
 				</table>
 			</div>
