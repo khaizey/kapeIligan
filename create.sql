@@ -5,7 +5,7 @@
 # Project name:                                                          #
 # Author:                                                                #
 # Script type:           Database creation script                        #
-# Created on:            2017-10-26 19:28                                #
+# Created on:            2017-10-29 02:27                                #
 # ---------------------------------------------------------------------- #
 
 
@@ -31,6 +31,8 @@ CREATE TABLE `rawInvent` (
     `rawInvent` INTEGER NOT NULL AUTO_INCREMENT,
     `beansId` INTEGER NOT NULL,
     `volAmount` VARCHAR(40) NOT NULL,
+    `supplier` VARCHAR(255),
+    `dateAcquired` DATE,
     CONSTRAINT `PK_rawInvent` PRIMARY KEY (`rawInvent`)
 );
 
@@ -56,7 +58,6 @@ CREATE TABLE `Production` (
     `rawInvent` INTEGER NOT NULL,
     `volumeInput` VARCHAR(40) NOT NULL,
     `volumeOut` VARCHAR(40) NOT NULL,
-    `batchName` VARCHAR(40) NOT NULL,
     `productDate` VARCHAR(40) NOT NULL,
     CONSTRAINT `PK_Production` PRIMARY KEY (`productionId`)
 );
