@@ -1,4 +1,4 @@
-	/****************
+img-responsive	/****************
  	Bootstrap changes
  	*****************/
  	.container,
@@ -6,10 +6,10 @@
 		max-width: none !important;
 		width: 1170px !important;
 	}
-
+img-responsive
 	/* Always float the navbar header */
 	.navbar-header {
-	  float: left;
+	  float: left;	  
 	}
 
 	/* Undo the collapsing navbar */

@@ -5,7 +5,7 @@
 # Project name:                                                          #
 # Author:                                                                #
 # Script type:           Database creation script                        #
-# Created on:            2017-10-27 14:51                                #
+# Created on:            2017-10-26 19:28                                #
 # ---------------------------------------------------------------------- #
 
 
@@ -31,7 +31,6 @@ CREATE TABLE `rawInvent` (
     `rawInvent` INTEGER NOT NULL AUTO_INCREMENT,
     `beansId` INTEGER NOT NULL,
     `volAmount` VARCHAR(40) NOT NULL,
-    `supplier` VARCHAR(255),
     CONSTRAINT `PK_rawInvent` PRIMARY KEY (`rawInvent`)
 );
 
