@@ -51,15 +51,15 @@ $sql = $con->query($qry);
           </a>
           <ul class="sidenav-second-level collapse" id="collapseComponents">
             <li>
-             <a href="invent/raw.php">Raw Beans</a>
+             <a href="../invent/raw.php">Raw Beans</a>
             </li>
             <li>
-              <a href="product.php">Retail Beans</a>
+              <a href="../product.php">Retail Beans</a>
             </li>
           </ul>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Roasting Process">
-          <a class="nav-link" href="../roasting.php">
+          <a class="nav-link" href="../roasting/roasting.php">
             <i class="fa fa-fw fa-wrench"></i>
             <span class="nav-link-text">Roasting Process</span>
           </a>
@@ -78,7 +78,7 @@ $sql = $con->query($qry);
           </a>
           <ul class="sidenav-second-level collapse" id="collapseExamplePages">
             <li>
-              <a href="order.php">Product Order</a>
+              <a href="../order.php">Product Order</a>
             </li>
           </ul>
         </li>
@@ -99,7 +99,7 @@ $sql = $con->query($qry);
       </ul>
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link" href="auth/auth.php?logout">
+          <a class="nav-link" href="../auth/auth.php?logout">
             <i class="fa fa-fw fa-sign-out"></i>Logout</a>
         </li>
       </ul>
@@ -217,17 +217,17 @@ $sql = $con->query($qry);
     <!-- Logout Modal-->
     
     <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
     <!-- Page level plugin JavaScript-->
-    <script src="vendor/datatables/jquery.dataTables.js"></script>
-    <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
+    <script src="../vendor/datatables/jquery.dataTables.js"></script>
+    <script src="../vendor/datatables/dataTables.bootstrap4.js"></script>
     <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin.min.js"></script>
+    <script src="../js/sb-admin.min.js"></script>
     <!-- Custom scripts for this page-->
-    <script src="js/sb-admin-datatables.min.js"></script>
+    <script src="../js/sb-admin-datatables.min.js"></script>
   </div>
 </body>
 
