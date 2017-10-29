@@ -19,14 +19,15 @@
 <body class="bg-dark">
   <div class="container">
     <div class="card card-register mx-auto mt-5">
-      <div class="card-header">Register an Account</div>
+      <div class="card-header">Product Order Form</div>
       <div class="card-body">
         <form>
           <div class="form-group">
             <div class="form-row">
               <div class="col-md-6">
-                <label for="exampleInputName">First name</label>
-                <input class="form-control" id="exampleInputName" type="text" aria-describedby="nameHelp" placeholder="Enter first name">
+                <label for="beanType">Bean Type</label>
+                
+                
               </div>
               <div class="col-md-6">
                 <label for="exampleInputLastName">Last name</label>
