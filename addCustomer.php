@@ -1,4 +1,4 @@
-<?php
+.<?php
 	include('../lib/class_lib.php');
 
 	$db_conn = new db_connect();
