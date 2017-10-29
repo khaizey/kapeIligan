@@ -90,13 +90,13 @@
             </li>
           </ul>
         </li>
-
+<!-- 
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
           <a class="nav-link" href="#">
             <i class="fa fa-fw fa-link"></i>
             <span class="nav-link-text">wala pa</span>
           </a>
-        </li>
+        </li> -->
       </ul>
       <ul class="navbar-nav sidenav-toggler">
         <li class="nav-item">
@@ -122,8 +122,8 @@
         </li>
         <li class="breadcrumb-item active">Roasting Process</li>
       </ol>
-
-      <ol class="breadcrumb">
+<center>
+      <ol class="breadcrumb">        
         <li class="breadcrumb-item active" style="font-size:30px;">Beans on hand</li>
         <li class="form-control" style="font-size:25px;"><?php
             $arabica_total = 0;     
@@ -161,6 +161,7 @@
             echo 'Robusta: '.$robusta_total.' grams </br>'.'Arabica: '.$arabica_total.' grams </br>';
             ?> 
 </li>
+</center>
       </ol>
       <!-- Example DataTables Card-->
       <div class="card mb-3">
@@ -185,7 +186,7 @@
                   <th>Coffee Source</th>
                   <th>Raw Beans (g)</th>
                   <th>Roasted Beans (g)</th>
-                  <th>action</th>
+                  <th>Action</th>
                 </tr>
               </tfoot>
               <tbody>
@@ -234,7 +235,7 @@
                         echo '<td>'.$coffee_s.'</td>';
                         echo '<td>'.$row_production['volumeInput'].'</td>';
                         echo '<td>'.$row_production['volumeOut'].'</td>';  
-                        echo '<td> <input type="submit" name="ADD" class="btn btn-info btn-block" value="DELETE"><td>' ;  
+                        // echo '<td> <input type="submit" name="ADD" class="btn btn-info btn-block" value="DELETE"><td>' ;  
                       echo '</tr>';
                     }
                   ?>

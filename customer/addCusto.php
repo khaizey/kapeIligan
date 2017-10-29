@@ -51,7 +51,7 @@ $con = $db_conn->connection_db();
              <a href="../invent/raw.php">Raw Beans</a>
             </li>
             <li>
-             <a href="../product.php">Retail Beans</a>
+             <a href="../product/packProduct.php">Retail Beans</a>
             </li>
           </ul>
         </li>
@@ -82,12 +82,12 @@ $con = $db_conn->connection_db();
           </li>
         </li>
 
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
+       <!--  <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
           <a class="nav-link" href="#">
             <i class="fa fa-fw fa-link"></i>
             <span class="nav-link-text">hapt na</span>
           </a>
-        </li>
+        </li> -->
       </ul>
       <ul class="navbar-nav sidenav-toggler">
         <li class="nav-item">

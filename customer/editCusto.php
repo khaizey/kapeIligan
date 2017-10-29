@@ -56,7 +56,7 @@ $res = $con->query($qru);
              <a href="../invent/raw.php">Raw Beans</a>
             </li>
             <li>
-             <a href="product.php">Retail Beans</a>
+              <a href="../product/packProduct.php">Retail Beans</a>
             </li>
           </ul>
         </li>
