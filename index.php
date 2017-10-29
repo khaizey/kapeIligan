@@ -69,10 +69,7 @@
           </a>
           <ul class="sidenav-second-level collapse" id="collapseExamplePages">
             <li>
-              <a href="login.php">Login Page</a>
-            </li>
-            <li>
-              <a href="register.php">Registration Page</a>
+              <a href="order.php">Registration Page</a>
             </li>
           </ul>
         </li>
