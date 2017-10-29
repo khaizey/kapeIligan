@@ -58,13 +58,14 @@
 
 		$q_inv_bean = "SELECT * FROM rawinvent WHERE rawInvent='$this_raw_inv' LIMIT 1";			
 		$res_inv_bean = $conn->query($q_inv_bean);
+		$volumeInput = (float)$row_production_all['volumeInput'];
 			
 			while ($row_inv_bean = $res_inv_bean->fetch_assoc()) {	// Get Bean type
 				if($row_inv_bean['beansId']==1){
-					$robusta_total -= $row_production_all['volumeInput'];
+					$robusta_total -= $volumeInput;
 				}
 				if($row_inv_bean['beansId']==2){
-					$arabica_total -= $row_production_all['volumeInput'];
+					$arabica_total -= $volumeInput;
 				}
 			}
 	}	
@@ -92,8 +93,8 @@
 		  ?>
 		</select>
 		</td>	
-		<td> <input type="text" name="proc_IN" value=""/> </td>
-		<td> <input type="text" name="proc_OUT" value=""/> </td>
+		<td> <input type="text" name="proc_IN" value="" required> </td>
+		<td> <input type="text" name="proc_OUT" value="" required> </td>
 		<td style="border:none;"> <input type="submit" value="ADD" /> </td>
     </form>
 	</tr>
