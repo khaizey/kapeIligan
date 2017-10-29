@@ -152,7 +152,6 @@
                   <td>3000</td>
                   <td>2011/04/25</td>
                   <td>3,000</td>
-                  <td>0.00</td>
                   <td><input type="submit" name="edit" class="btn btn-info btn-block" value="View"></td>
                 </tr>
                 <tr>
@@ -162,7 +161,6 @@
                   <td>3800</td>
                   <td>2011/07/25</td>
                   <td>3,000</td>
-                  <td>800</td>
                   <td><input type="submit" name="edit" class="btn btn-info btn-block" value="View"></td>
                 </tr>
                  <tr>
@@ -172,7 +170,6 @@
                   <td>1,750</td>
                   <td>2011/08/25</td>
                   <td>750</td>
-                  <td>1,000</td>
                   <td><input type="submit" name="edit" class="btn btn-info btn-block" value="View"></td>
                 </tr>
               </tbody>
