@@ -2,7 +2,6 @@
   require "lib/class_lib.php";
   $db = new db_connect();
   $con = $db->connection_db();
-
 ?>
 
 <!DOCTYPE html>

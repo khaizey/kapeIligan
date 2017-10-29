@@ -115,42 +115,42 @@
               <thead>
                 <tr>
                   <th>Roasting Date</th>
-                  <th>Batch Number</th>
                   <th>Supplier</th>
                   <th>Raw Beans (g)</th>
                   <th>Roasted Beans (g)</th>
+                  <th>Action</th>
                 </tr>
               </thead>
               <tfoot>
                 <tr>
                   <th>Roasting Date</th>
-                  <th>Batch Number</th>
                   <th>Supplier</th>
                   <th>Raw Beans (g)</th>
                   <th>Roasted Beans (g)</th>
+                  <th></th>
                 </tr>
               </tfoot>
               <tbody>
                 <tr>
-                  <td>2011/04/25</td>
-                  <td>1</td>
-                  <td>Arabica</td>                  
-                  <td>3000</td>
-                  <td>2011/04/25</td>
+                  <td><input type="text" name="dateRoast" class="form-control"></td>
+                  <td><input type="" name="" class="form-control"></td>                  
+                  <td><input type="" name="" class="form-control"></td>
+                  <td><input type="" name="" class="form-control"></td>
+                  <th><input type="submit" name="add" class="btn btn-info btn-block" value="Add"></th>
                 </tr>
                 <tr>
                   <td>Garrett Winters</td>
-                  <td>Robusta</td>
                   <td>2011/04/25</td>
                   <td>3800</td>
                   <td>2011/07/25</td>
+                  <th></th>
                 </tr>
                  <tr>
                   <td>Kharen Garnette</td>
-                  <td>Premium</td>
                   <td>2011/08/25</td>
                   <td>1,750</td>
                   <td>2011/08/25</td>
+                  <th></th>s
                 </tr>
               </tbody>
             </table>
