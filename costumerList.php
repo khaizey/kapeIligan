@@ -1,6 +1,14 @@
+<?php
+  include('lib/class_lib.php');
+
+  $db_conn = new db_connect();
+  $con = $db_conn->connection_db();
+
+  $qry = "SELECT * FROM customer";
+  $sql = $con->query($qry); 
+?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
