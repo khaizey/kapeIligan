@@ -96,24 +96,11 @@
 							</form>
 						</td>
 					</tr>
-					<?php 
-					if(isset($_POST['id'])){
-						$id = $_POST['id'];
-
-						$sql1 = "DELETE FROM customer WHERE customerId='$id'";
-						$sql2 = $con->query($sql1);
-
-						if($sql2 === TRUE){
-							header('location: customerPage.php');
-						}
-					}
-					endwhile; ?> 	
+					<?php endwhile; ?> 	
 				</table>
 			</div>
 		</div>
 	</body>
-
 	<br />
 	<a class="add" href="addCustomer.php"> Add Customer </a>
-
 </html>
