@@ -1,3 +1,22 @@
+<?php   
+    require "lib/class_lib.php";
+    $db = new db_connect();
+    $conn = $db->connection_db();
+
+    if( !isset( $_SESSION['username'] ) ){
+      echo "<script>window.location = '../auth';</script>";
+    }
+  
+  if(isset($_POST['proc_date'])) {
+    $new_date =$_POST['proc_date'];
+    $new_coffee =$_POST['proc_coffee'];
+    $new_in =$_POST['proc_IN'];
+    $new_out =$_POST['proc_OUT'];
+      
+    $conn->query("INSERT INTO production(rawInvent, volumeInput, volumeOut, productDate) 
+        VALUES('$new_coffee', '$new_in', '$new_out', '$new_date')");
+  } 
+?>
 <!DOCTYPE html>
 <html lang="en">
 
