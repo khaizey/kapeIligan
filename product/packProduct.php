@@ -1,18 +1,43 @@
-<?php
-include('../lib/class_lib.php');
+<?php   
+    require "../lib/class_lib.php";
+    $db = new db_connect();
+    $conn = $db->connection_db();
 
-$db_conn = new db_connect();
-$con = $db_conn->connection_db();
-
-$id = $_GET['id'];
-
-$qru = "SELECT * FROM customer WHERE customerId='$id'";
-$res = $con->query($qru);
+    if( !isset( $_SESSION['username'] ) ){
+      echo "<script>window.location = '../auth';</script>";
+    }
+  
+  if(isset($_POST['pack_coffee'])) {      $coffee_price=0;
+    $pack_coffee =$_POST['pack_coffee'];
+    $pack_100 =$_POST['pack_100'];
+    $pack_250 =$_POST['pack_250'];
+    $pack_500 =$_POST['pack_500'];
+    $pack_1000 =$_POST['pack_1000'];
+    
+      if($pack_coffee=='Robusta'){ $coffee_price+=350; }  // ----- Coffee PRICES
+      if($pack_coffee=='Arabica'){ $coffee_price+=800; }
+      if($pack_coffee=='Premium'){ $coffee_price+=440; }
+        
+    if($pack_100 != ''){    
+      $conn->query("INSERT INTO product(productName, productVolume, productQty, productPrice) 
+          VALUES('$pack_coffee', '100', '$pack_100', '$coffee_price')");
+    }
+    if($pack_250 != ''){  
+      $conn->query("INSERT INTO product(productName, productVolume, productQty, productPrice) 
+          VALUES('$pack_coffee', '250', '$pack_250', '$coffee_price')");
+    }
+    if($pack_500 != ''){  
+      $conn->query("INSERT INTO product(productName, productVolume, productQty, productPrice) 
+          VALUES('$pack_coffee', '500', '$pack_500', '$coffee_price')");
+    }
+    if($pack_1000 != ''){ 
+      $conn->query("INSERT INTO product(productName, productVolume, productQty, productPrice) 
+          VALUES('$pack_coffee', '1000', '$pack_1000', '$coffee_price')");
+    }
+  } 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -33,8 +58,8 @@ $res = $con->query($qru);
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
   <!-- Navigation-->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-    <img src="../images/logo.png" style="height:50px;padding-right:10px;" alt="logo">
-    <a class="navbar-brand" href="#">Kape Iligan</a>
+   <img src="../images/logo.png" style="height:50px;padding-right:10px;" alt="logo">
+    <a class="navbar-brand" href="index.php">Kape Iligan</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -56,7 +81,7 @@ $res = $con->query($qru);
              <a href="../invent/raw.php">Raw Beans</a>
             </li>
             <li>
-             <a href="product.php">Retail Beans</a>
+             <a href="../product.php">Retail Beans</a>
             </li>
           </ul>
         </li>
@@ -66,7 +91,6 @@ $res = $con->query($qru);
             <span class="nav-link-text">Roasting Process</span>
           </a>
         </li>
-
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Customers">
           <a class="nav-link" href="../customer/costumerList.php">
             <i class="fa fa-fw fa-table"></i>
@@ -77,20 +101,19 @@ $res = $con->query($qru);
        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
           <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplePages" data-parent="#exampleAccordion">
             <i class="fa fa-fw fa-file"></i>
-            <span class="nav-link-text">Transactions</span>
+             <span class="nav-link-text">Transactions</span>
           </a>
           <ul class="sidenav-second-level collapse" id="collapseExamplePages">
             <li>
               <a href="../order.php">Product Order</a>
             </li>
           </ul>
-          </li>
         </li>
 
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
           <a class="nav-link" href="#">
             <i class="fa fa-fw fa-link"></i>
-            <span class="nav-link-text">hapt na</span>
+            <span class="nav-link-text">wala pa</span>
           </a>
         </li>
       </ul>
@@ -116,63 +139,108 @@ $res = $con->query($qru);
         <li class="breadcrumb-item">
           <a href="#">Dashboard</a>
         </li>
-        <li class="breadcrumb-item active">Customers</li>
+        <li class="breadcrumb-item active">Roasting Process</li>
       </ol>
-      <!-- Example DataTables Card-->
 
-<!-- start -->
+      <!-- Example DataTables Card-->
       <div class="card mb-3">
         <div class="card-header">
-          <i class="fa fa-table"></i> Edit Customer</div>
-
-          <div class="card-body">
-
-          <form method="post">
-             <?php while($row = mysqli_fetch_array($res)):?>
-            <div class="form-group">
-              <label>Customer Name:</label> 
-              <div class="form-row">          
-                <div class="col-md-6">
-                  <input type="text" placeholder="Firstname" class="form-control" name="firstname" value="<?php echo $row['cosFirstname']; ?>" style="width: 500px;" required>
-                </div>
-                <div class="col-md-6">
-                   <input type="text" placeholder="Lastname" class="form-control" style="width:500px;" value="<?php echo $row['cosLastname']; ?>" name="lastname" required> 
-                </div>
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="form-row">          
-                <div class="col-md-6">
-                  <label>Birthdate:</label>
-                  <input type="text" class="form-control" style="width:500px;" name="date" placeholder="Example: January 21, 1960" value="<?php echo $row['birthDate'];?>" required>
-                </div>
-                <div class="col-md-6">
-                  <label>Address:</label>
-                  <input type="text" name="address" class="form-control" style="width:500px;" style="width: 25%;" value="<?php echo $row['address']; ?>" placeholder="Street,Barangay,Town/Municipality" required >
-                </div>
-              </div>
-            </div>
-              <div class="form-group">
-              <div class="form-row">          
-                <div class="col-md-6">
-                  <label>Contact Number:</label>
-                  <input type="number" class="form-control" style="width:500px;" style="width: 25%;" name="contact" value="<?php echo $row['contactNum']; ?>" required>
-                </div>
-                <div class="col-md-6">
-                  <label>Email</label>
-                 <input type="email" name="email" class="form-control" style="width:500px;" value="<?php echo $row['email']; ?>" required>
-                </div>
-
-              </div>
-            </div>
-            <?php endwhile; ?>
-            <input type="submit" class="btn btn-info btn-block" style="float:right;width:300px;" name="save" value="Submit">
-          </form>
+          <i class="fa fa-table"></i> Roasting Process</div>
+        <div class="card-body">
+          <div class="table-responsive">
+<!-- begin table -->
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+              <thead>
+                <tr>
+                  <th>Product</th>
+                  <th>100 grams</th>
+                  <th>250 grams</th>
+                  <th>500 grams</th>
+                  <th>1 kilogram</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tfoot>
+                <tr>
+                   <th>Product</th>
+                  <th>100 grams</th>
+                  <th>250 grams</th>
+                  <th>500 grams</th>
+                  <th>1 kilogram</th>
+                  <th>Action</th>
+                </tr>
+              </tfoot>
+              <tbody>
+                <tr>
+                  <form method="post" action="#">
+                      <td>
+                      <select name="pack_coffee" class="form-control">   
+                        <option value="Arabica">Arabica</option>
+                        <option value="Robusta">Robusta</option>
+                        <option value="Premium">Premium</option>
+                      </select>
+                      </td>
+                      <td> <input type="text" name="pack_100" class="form-control" value=""/> </td>
+                      <td> <input type="text" name="pack_250" class="form-control" value=""/> </td>
+                      <td> <input type="text" name="pack_500" class="form-control" value=""/> </td>
+                      <td> <input type="text" name="pack_1000" class="form-control" value=""/> </td>
+                      <td>
+                         <input type="submit" name="ADD" class="btn btn-info btn-block" value="ADD">
+                      </td>
+                    </form>
+                </tr>
+                 <?php
+    $robusta_100 = 0;   $robusta_250 = 0;   $robusta_500 = 0;   $robusta_1000 = 0;
+    $arabica_100 = 0;   $arabica_250 = 0;   $arabica_500 = 0;   $arabica_1000 = 0;
+    $prem_100 = 0;      $prem_250 = 0;      $prem_500 = 0;      $prem_1000 = 0;
+    
+      $q_robusta_pkg = "SELECT * FROM product WHERE productName='Robusta'"; //-- Display 100% ROBUSTA Product Inv
+      $res_robusta_pkg = $conn->query($q_robusta_pkg);
+  
+  while ($row_robusta_pkg = $res_robusta_pkg->fetch_assoc()) {
+    if($row_robusta_pkg['productVolume']=='100'){ $robusta_100 += $row_robusta_pkg['productQty'];}
+    if($row_robusta_pkg['productVolume']=='250'){ $robusta_250 += $row_robusta_pkg['productQty'];}
+    if($row_robusta_pkg['productVolume']=='500'){ $robusta_500 += $row_robusta_pkg['productQty'];}
+    if($row_robusta_pkg['productVolume']=='1000'){  $robusta_1000 += $row_robusta_pkg['productQty'];}
+  }
+    $q_arabica_pkg = "SELECT * FROM product WHERE productName='Arabica'"; //-- Display 100% ARABICA Product Inv
+    $res_arabica_pkg = $conn->query($q_arabica_pkg);
+  
+  while ($row_arabica_pkg = $res_arabica_pkg->fetch_assoc()) {
+    if($row_arabica_pkg['productVolume']=='100'){ $arabica_100 += $row_arabica_pkg['productQty'];}
+    if($row_arabica_pkg['productVolume']=='250'){ $arabica_250 += $row_arabica_pkg['productQty'];}
+    if($row_arabica_pkg['productVolume']=='500'){ $arabica_500 += $row_arabica_pkg['productQty'];}
+    if($row_arabica_pkg['productVolume']=='1000'){  $arabica_1000 += $row_arabica_pkg['productQty'];}
+  }
+    $q_premium_pkg = "SELECT * FROM product WHERE productName='Premium'"; //-- Display PREMIUM Coffee Product Inv
+    $res_premium_pkg = $conn->query($q_premium_pkg);
+  
+  while ($row_premium_pkg = $res_premium_pkg->fetch_assoc()) {
+    if($row_premium_pkg['productVolume']=='100'){ $prem_100 += $row_premium_pkg['productQty'];}
+    if($row_premium_pkg['productVolume']=='250'){ $prem_250 += $row_premium_pkg['productQty'];}
+    if($row_premium_pkg['productVolume']=='500'){ $prem_500 += $row_premium_pkg['productQty'];}
+    if($row_premium_pkg['productVolume']=='1000'){  $prem_1000 += $row_premium_pkg['productQty'];}
+  }
+  ?>
+  <tr><td>Robusta</td>
+    <td><?php echo $robusta_100; ?></td>  <td><?php echo $robusta_250; ?></td>
+    <td><?php echo $robusta_500; ?></td>  <td><?php echo $robusta_1000; ?></td>
+  </tr>
+  <tr><td>Arabica</td>
+    <td><?php echo $arabica_100; ?></td>  <td><?php echo $arabica_250; ?></td>
+    <td><?php echo $arabica_500; ?></td>  <td><?php echo $arabica_1000; ?></td>
+  </tr>
+  <tr><td>Premium</td>
+    <td><?php echo $prem_100; ?></td>   <td><?php echo $prem_250; ?></td>
+    <td><?php echo $prem_500; ?></td>   <td><?php echo $prem_1000; ?></td>
+  </tr>
+              </tbody>
+            </table>
+<!-- end table -->
+          </div>
         </div>
-         
-        <!-- <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div> -->
+      <!--   <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div> -->
       </div>
-<!-- end -->
     </div>
     <!-- /.container-fluid-->
     <!-- /.content-wrapper-->
@@ -188,7 +256,7 @@ $res = $con->query($qru);
       <i class="fa fa-angle-up"></i>
     </a>
     <!-- Logout Modal-->
-   
+    
     <!-- Bootstrap core JavaScript-->
     <script src="../vendor/jquery/jquery.min.js"></script>
     <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -204,25 +272,4 @@ $res = $con->query($qru);
   </div>
 </body>
 
-<?php
-  if(isset($_POST['save'])){
-    
-    $fname = $_POST['firstname'];
-    $lname = $_POST['lastname'];
-    $birth = $_POST['date'];
-    $address = $_POST['address'];
-    $num = $_POST['contact'];
-    $email = $_POST['email'];
-
-    $query = "UPDATE customer SET cosLastname='$lname',cosFirstname='$fname',birthDate='$birth',address='$address',contactNum='$num',email='$email' WHERE customerId='$id'";
-    $re = $con->query($query);
-
-    if($re === TRUE){
-      echo '<script> alert("Successful Updated");</script>';
-      echo '<script> window.open("costumerList.php","_self");</script>';
-    }
-  }
-?>
-
 </html>
-../

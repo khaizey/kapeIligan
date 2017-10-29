@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -44,7 +43,7 @@
              <a href="invent/raw.php">Raw Beans</a>
             </li>
             <li>
-              <a href="product.php">Retail Beans</a>
+              <a href="product/packProduct.php">Retail Beans</a>
             </li>
           </ul>
         </li>
