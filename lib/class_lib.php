@@ -47,6 +47,10 @@
 				return "not_login";
 			}
 		}
+
+		function logout(){
+			session_destroy() ;
+		}
 	}
 	
 	

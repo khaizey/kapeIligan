@@ -18,5 +18,11 @@
 			echo "<script>alert('Welcome ".$_SESSION['username']."!');window.location = '../';</script>";
 		}
 	}
+	elseif( isset( $_GET['logout'] ) ){
+
+		echo "<script>alert('Bye ".$_SESSION['username']."!');window.location = '../auth';</script>";
+		$auth->logout();
+		
+	}
 	
 	
