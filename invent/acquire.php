@@ -109,46 +109,72 @@
       <!-- Area Chart Example-->
       <div class="card mb-3">
         <div class="card-header">
-          <i class="fa fa-table"></i> Raw Table </div>
-
+          <i class="fa fa-table"></i> Raw Info</div>
         <div class="card-body">
-                  <div class="btn-group">
-                    <button id="acquire" class="btn btn-success">
-                    Acquire <i class="fa fa-plus"></i>
-                    </button>
+          <div class="row">
+              <div class="col-md-12">
+                <!-- BEGIN EXAMPLE TABLE PORTLET-->
+                <div class="portlet box blue">
+                  
+                  <div class="portlet-body form">
+                    <form role="form" method="post" action="add.php">
+                      <div class="form-body">
+                        <div class="form-group">
+                          <label for="exampleInputEmail1">Type of Beans</label>
+                          <select class="form-control" name="beans">
+                            <option value="0">--Select--</option>
+                            <?php
+                              $statement = "SELECT * FROM `bean`";
+                              $res = $con->query($statement);
+                              
+                              while($resu = $res->fetch_object()) {
+                            ?>
+                                <option 
+                                  <?php 
+                                    if(isset($_POST['beans'])){
+                                      echo $_POST['beans'] == $resu->beansId? "selected": "";
+                                    }  
+                                  ?> value='<?php echo $resu->beansId; ?>'>
+                                  <?php echo $resu->beansName; ?>
+                                </option>;
+                            <?php
+                              }
+                            ?>
+                          </select>
+                        </div>
+                        <div class="form-group">
+                          <label for="exampleInputPassword1">Volume</label>
+                          <div class="input-group">
+                            <input type="text" class="form-control" required name="volume" placeholder="Volume">
+                          </div>
+                          <span class="help-block">
+                             Input Volume in Grams
+                          </span>
+                        </div>
+                        <div class="form-group">
+                          <label for="exampleInputPassword1">Date Acquired</label>
+                          <div class="input-group">
+                            <input type="date" class="form-control" required name="date_acq" placeholder="Date Acquired">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label for="exampleInputPassword1">Supplier</label>
+                          <div class="input-group">
+                            <input type="text" class="form-control" required name="supplier" placeholder="Supplier">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-actions">
+                        <button type="submit" name="add" class="btn btn-info">Add</button>
+                        <button type="button" class="btn btn-default">Cancel</button>
+                      </div>
+                    </form>
                   </div>
-              <div class="table-responsive">
-    <!-- begin table -->
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                  <thead>
-                    <tr>
-                      <th>Bean Type</th>
-                      <th>Volume</th>
-                      <th>Date Acquired</th>
-                      <th>Supplier</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <?php
-                      $statement = "SELECT * FROM `rawinvent` as r, bean as b
-                          where r.beansId = b.beansId order by dateAcquired DESC";
-                      $res = $con->query($statement);
-                      
-                      while($resu = $res->fetch_object()) {
-                    ?>
-                      <tr>
-                        <td><?php echo $resu->beansName;?></td>
-                        <td><?php echo $resu->volAmount;?></td>
-                        <td><?php echo $resu->dateAcquired;?></td>
-                        <td><?php echo $resu->supplier;?></td>
-                      </tr>
-                    <?php
-                      }
-                    ?>
-                  </tbody>
-                </table>
-    <!-- end table -->
+                    
+                </div>
+                <!-- END EXAMPLE TABLE PORTLET-->
               </div>
+            </div>
         </div>
         <div class="card-footer small text-muted"></div>
       </div>
@@ -191,14 +217,8 @@
     <!-- Core plugin JavaScript-->
     <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
     <!-- Page level plugin JavaScript-->
-    <script src="../vendor/chart.js/Chart.min.js"></script>
-    <script src="../vendor/datatables/jquery.dataTables.js"></script>
-    <script src="../vendor/datatables/dataTables.bootstrap4.js"></script>
     <!-- Custom scripts for all pages-->
     <script src="../js/sb-admin.min.js"></script>
-    <!-- Custom scripts for this page-->
-    <script src="../js/sb-admin-datatables.min.js"></script>
-    <script src="../js/sb-admin-charts.min.js"></script>
 
     <script src="../js/raw.js"></script>
   </div>
