@@ -1,5 +1,5 @@
 <?php
-include("lib/class_lib.php");
+include("../lib/class_lib.php");
 $conn = new db_connect();
 $con = $conn -> connection_db();
 if(isset($_GET['viewingproducts'])){

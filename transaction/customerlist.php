@@ -1,11 +1,29 @@
 <?php
-include("lib/class_lib.php");
+include("../lib/class_lib.php");
 $conn = new db_connect();
 $con = $conn -> connection_db();
 if(isset($_GET['viewingcustomers'])){
 $customerinput = $_GET['viewingcustomers'];}
+$thiscustomer = $_GET['thiscustomer'];
+
+if (strpos($thiscustomer, ", ") !== false) {
+$pieces = explode(", ", $thiscustomer);
+$cosLastnamesearch = $pieces[0];
+$cosFirstnamesearch = $pieces[1];
+}
+elseif(strpos($thiscustomer, " ") !== false) {
+$pieces = explode(" ", $thiscustomer);
+$cosLastnamesearch = $pieces[0];
+$cosFirstnamesearch = $pieces[1];
+}
+else{
+	$cosLastnamesearch = $thiscustomer;
+	$cosFirstnamesearch = 'none';
+}
+
+
 if(!empty($customerinput)){
-$query = "SELECT * FROM customer";
+$query = "SELECT * FROM customer WHERE cosLastname LIKE '%$cosLastnamesearch%' OR cosFirstname LIKE '%$cosFirstnamesearch%' OR cosLastname LIKE '%$cosFirstnamesearch%' OR cosFirstname LIKE '%$cosLastnamesearch%' ";
 $stmt = mysqli_query($con, $query);
     while($row = mysqli_fetch_assoc($stmt)){
 $value = $row['customerId'];

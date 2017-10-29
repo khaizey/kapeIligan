@@ -1,5 +1,5 @@
 <?php
-include("lib/class_lib.php");
+include("../lib/class_lib.php");
 $conn = new db_connect();
 $con = $conn -> connection_db();
 
@@ -41,6 +41,26 @@ $stmt = mysqli_query($con, $query);
 // simple query  
 $stmtinsert = $con->query($queryinsert);
 if($stmtinsert){
+
+	$findthisquery = "SELECT * FROM accntspayable t1 INNER JOIN product t2 on t1.productId = t2.productId ORDER by accntsId DESC LIMIT 1";
+$thisstmt = mysqli_query($con, $findthisquery);
+    while($row = mysqli_fetch_assoc($thisstmt)){
+    	$debtQty = $row['debtQty'];
+    	$debtDate = $row['debtDate'];
+    	$debtPayment = $row['debtPayment'];
+    	$customerId = $row['customerId'];
+    	$productId = $row['productId'];
+    	$productName = $row['productName'];
+    	$productVolume = $row['productVolume'];
+    	$productPrice = $row['productPrice'];
+
+    	$totalprice = $debtQty*$productPrice;
+
+
+echo '<div class = "col-md-12">Price: '.$productPrice.', Quantity: '.$debtQty.', Date: '.$debtDate.', Product: '.$productName.', Volume: '.$productVolume.', Total Payables: '.$totalprice.'</div>';
+}
+
+
 	echo '<div class = "notification">Succesfull!</div>';
 }
 else{
