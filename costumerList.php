@@ -69,12 +69,10 @@
           </a>
           <ul class="sidenav-second-level collapse" id="collapseExamplePages">
             <li>
-              <a href="login.php">Login Page</a>
-            </li>
-            <li>
-              <a href="register.php">Registration Page</a>
+              <a href="order.php">Product Order</a>
             </li>
           </ul>
+          </li>
         </li>
 
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">

@@ -69,7 +69,7 @@
           </a>
           <ul class="sidenav-second-level collapse" id="collapseExamplePages">
             <li>
-              <a href="order.php">Registration Page</a>
+              <a href="order.php">Product Order</a>
             </li>
           </ul>
         </li>

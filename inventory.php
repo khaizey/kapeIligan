@@ -66,18 +66,14 @@
        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
           <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplePages" data-parent="#exampleAccordion">
             <i class="fa fa-fw fa-file"></i>
-            <span class="nav-link-text">Transactions</span>
+             <span class="nav-link-text">Transactions</span>
           </a>
           <ul class="sidenav-second-level collapse" id="collapseExamplePages">
             <li>
-              <a href="login.php">Login Page</a>
-            </li>
-            <li>
-              <a href="register.php">Registration Page</a>
+              <a href="order.php">Product Order</a>
             </li>
           </ul>
         </li>
-
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
           <a class="nav-link" href="#">
             <i class="fa fa-fw fa-link"></i>
