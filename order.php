@@ -1,3 +1,10 @@
+<?php
+  require "../lib/class_lib.php";
+  $db = new db_connect();
+  $con = $db->connection_db();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,8 +33,27 @@
             <div class="form-row">
               <div class="col-md-6">
                 <label for="beanType">Bean Type</label>
-                
-                
+                <select class="form-control" name="beans">
+                     <option value="0">--Select--</option>
+                            <?php
+                              $statement = "SELECT * FROM `bean`";
+                              $res = $con->query($statement);
+                              
+                              while($resu = $res->fetch_object()) {
+                            ?>
+                                <option 
+                                  <?php 
+                                    if(isset($_POST['beans'])){
+                                      echo $_POST['beans'] == $resu->beansId? "selected": "";
+                                    }  
+                                  ?> value='<?php echo $resu->beansId; ?>'>
+                                  <?php echo $resu->beansName; ?>
+                                </option>;
+                            <?php
+                              }
+                            ?>
+                          </select>
+
               </div>
               <div class="col-md-6">
                 <label for="exampleInputLastName">Last name</label>
