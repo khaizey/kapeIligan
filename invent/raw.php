@@ -144,13 +144,20 @@
                     <?php
                       $statement = "SELECT * FROM `rawinvent` as r, bean as b
                           where r.beansId = b.beansId order by dateAcquired DESC";
+
+
                       $res = $con->query($statement);
                       
                       while($resu = $res->fetch_object()) {
+                        $query = "SELECT sum(volumeInput) as total FROM `production` where rawinvent = ".$resu->rawInvent;
+                         $ress = $con->query($query);
+                         $resus = $ress->fetch_object();
+
+                         $total = $resu->volAmount - $resus->total; 
                     ?>
                       <tr>
                         <td><?php echo $resu->beansName;?></td>
-                        <td><?php echo $resu->volAmount;?></td>
+                        <td><?php echo $total;?></td>
                         <td><?php echo $resu->dateAcquired;?></td>
                         <td><?php echo $resu->supplier;?></td>
                       </tr>
