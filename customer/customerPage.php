@@ -91,24 +91,12 @@
 						<td> <?php echo $row['email']; ?> </td>
 						<td>
 							<form method="POST">
-								<input hidden type="text" name="remove" value="<?php echo $row['customerId']; ?>">
 								<button class="del" type="submit" name="del">Delete</button>
 								<a class="edit" href="editCustomer.php?id=<?php echo $row['customerId']; ?>" > Edit </a>
 							</form>
 						</td>
 					</tr>
-					<?php endwhile;
-						if(isset($_POST['del'])){
-							$dele = $_POST['remove'];
-
-							$delete = "DELETE FROM customer WHERE customerId='$dele'";
-
-							if($con->query($delete) === TRUE){
-								echo '<script>alert("Successful Deleted")</script>';
-								echo '<script>window.open("customerPage.php","_self")</script>';
-							}
-						}
-					?> 	 	
+					<?php endwhile; ?> 	
 				</table>
 			</div>
 		</div>
