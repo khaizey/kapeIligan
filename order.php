@@ -21,10 +21,15 @@
   <link href="css/sb-admin.css" rel="stylesheet">
 </head>
 
-<body class="bg-dark">
-  <div class="container">
+<body class="bg-dark" >
+  <div class="container" id="container">
     <div class="card card-register mx-auto mt-5">
-      <div class="card-header">Product Order Form</div>
+      <div class="card-header">Product Order Form
+        <button class="close" type="button" data-dismiss="container" aria-label="Close">
+              <span aria-hidden="true">×</span>
+        </button>
+      </div>
+
       <div class="card-body">
         <form>
           <div class="form-group">
