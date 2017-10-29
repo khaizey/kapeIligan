@@ -41,7 +41,7 @@ $res = $con->query($qru);
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-          <a class="nav-link" href="index.php">
+          <a class="nav-link" href="../index.php">
             <i class="fa fa-fw fa-dashboard"></i>
             <span class="nav-link-text">Dashboard</span>
           </a>
@@ -53,22 +53,22 @@ $res = $con->query($qru);
           </a>
           <ul class="sidenav-second-level collapse" id="collapseComponents">
             <li>
-             <a href="invent/raw.php">Raw Products</a>
+             <a href="../invent/raw.php">Raw Beans</a>
             </li>
             <li>
-              <a href="#">Non-Walk In</a>
+             <a href="product.php">Retail Beans</a>
             </li>
           </ul>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Roasting Process">
-          <a class="nav-link" href="roasting.php">
+          <a class="nav-link" href="../roasting.php">
             <i class="fa fa-fw fa-wrench"></i>
             <span class="nav-link-text">Roasting Process</span>
           </a>
         </li>
 
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Customers">
-          <a class="nav-link" href="costumerList.php">
+          <a class="nav-link" href="../customer/costumerList.php">
             <i class="fa fa-fw fa-table"></i>
             <span class="nav-link-text">Customers</span>
           </a>
@@ -81,7 +81,7 @@ $res = $con->query($qru);
           </a>
           <ul class="sidenav-second-level collapse" id="collapseExamplePages">
             <li>
-              <a href="order.php">Product Order</a>
+              <a href="../order.php">Product Order</a>
             </li>
           </ul>
           </li>
@@ -103,7 +103,7 @@ $res = $con->query($qru);
       </ul>
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
+          <a class="nav-link" href="auth/auth.php?logout">
             <i class="fa fa-fw fa-sign-out"></i>Logout</a>
         </li>
       </ul>
@@ -119,57 +119,67 @@ $res = $con->query($qru);
         <li class="breadcrumb-item active">Customers</li>
       </ol>
       <!-- Example DataTables Card-->
+
+<!-- start -->
       <div class="card mb-3">
         <div class="card-header">
           <i class="fa fa-table"></i> Edit Customer</div>
 
-          <br />
+          <div class="card-body">
 
           <form method="post">
-            <?php while($row = mysqli_fetch_array($res)):?>
-
+             <?php while($row = mysqli_fetch_array($res)):?>
             <div class="form-group">
-              <label>Name:</label>
-              <input type="text" placeholder="Firstname" class="form-control" name="firstname" value="<?php echo $row['cosFirstname']; ?>" style="width: 300px;" required>
-              <input type="text" placeholder="Lastname" class="form-control" style="width: 300px;" name="lastname" value="<?php echo $row['cosLastname']; ?>"  required> 
+              <label>Customer Name:</label> 
+              <div class="form-row">          
+                <div class="col-md-6">
+                  <input type="text" placeholder="Firstname" class="form-control" name="firstname" value="<?php echo $row['cosFirstname']; ?>" style="width: 500px;" required>
+                </div>
+                <div class="col-md-6">
+                   <input type="text" placeholder="Lastname" class="form-control" style="width:500px;" value="<?php echo $row['cosLastname']; ?>" name="lastname" required> 
+                </div>
+              </div>
             </div>
-            
-
             <div class="form-group">
-              <label>Birthdate:</label>
-              <input type="text" class="form-control" style="width: 300px;" name="date" value="<?php echo $row['birthDate'];?>" required>
+              <div class="form-row">          
+                <div class="col-md-6">
+                  <label>Birthdate:</label>
+                  <input type="text" class="form-control" style="width:500px;" name="date" placeholder="Example: January 21, 1960" value="<?php echo $row['birthDate'];?>" required>
+                </div>
+                <div class="col-md-6">
+                  <label>Address:</label>
+                  <input type="text" name="address" class="form-control" style="width:500px;" style="width: 25%;" value="<?php echo $row['address']; ?>" placeholder="Street,Barangay,Town/Municipality" required >
+                </div>
+              </div>
             </div>
+              <div class="form-group">
+              <div class="form-row">          
+                <div class="col-md-6">
+                  <label>Contact Number:</label>
+                  <input type="number" class="form-control" style="width:500px;" style="width: 25%;" name="contact" value="<?php echo $row['contactNum']; ?>" required>
+                </div>
+                <div class="col-md-6">
+                  <label>Email</label>
+                 <input type="email" name="email" class="form-control" style="width:500px;" value="<?php echo $row['email']; ?>" required>
+                </div>
 
-            <div class="form-group">
-              <label>Address:</label>
-              <input type="text" name="address" class="form-control" style="width: 300px;" style="width: 25%;" value="<?php echo $row['address']; ?>" required >
+              </div>
             </div>
-
-            <div class="form-group">
-              <label>Contact Number:</label>
-              <input type="number" class="form-control" style="width: 300px;" style="width: 25%;" name="contact" value="<?php echo $row['contactNum']; ?>">
-            </div>
-
-            <div class="form-group">
-              <label>Email</label>
-              <input type="email" name="email" class="form-control" style="width: 300px;" required value="<?php echo $row['email']; ?>">
-            </div>
-
             <?php endwhile; ?>
-
-            <input type="submit" class="btn btn-info btn-block" style="width: 300px;" name="save" value="Submit">
+            <input type="submit" class="btn btn-info btn-block" style="float:right;width:300px;" name="save" value="Submit">
           </form>
-        
+        </div>
          
         <!-- <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div> -->
       </div>
+<!-- end -->
     </div>
     <!-- /.container-fluid-->
     <!-- /.content-wrapper-->
     <footer class="sticky-footer">
       <div class="container">
         <div class="text-center">
-          <small>Copyright © Kape Iligan 2017</small>
+          <small>Copyright © ClearGlass 2017</small>
         </div>
       </div>
     </footer>
@@ -178,23 +188,7 @@ $res = $con->query($qru);
       <i class="fa fa-angle-up"></i>
     </a>
     <!-- Logout Modal-->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">×</span>
-            </button>
-          </div>
-          <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-          <div class="modal-footer">
-            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-            <a class="btn btn-primary" href="login.html">Logout</a>
-          </div>
-        </div>
-      </div>
-    </div>
+   
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

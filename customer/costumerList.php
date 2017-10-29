@@ -31,15 +31,15 @@ $sql = $con->query($qry);
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
   <!-- Navigation-->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-    <img src="../images/logo.png" style="height:50px;padding-right:10px;" alt="logo">
-    <a class="navbar-brand" href="#">Kape Iligan</a>
+   <img src="../images/logo.png" style="height:50px;padding-right:10px;" alt="logo">
+    <a class="navbar-brand" href="index.php">Kape Iligan</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-          <a class="nav-link" href="index.php">
+          <a class="nav-link" href="../index.php">
             <i class="fa fa-fw fa-dashboard"></i>
             <span class="nav-link-text">Dashboard</span>
           </a>
@@ -51,22 +51,21 @@ $sql = $con->query($qry);
           </a>
           <ul class="sidenav-second-level collapse" id="collapseComponents">
             <li>
-             <a href="invent/raw.php">Raw Products</a>
+             <a href="invent/raw.php">Raw Beans</a>
             </li>
             <li>
-              <a href="#">Non-Walk In</a>
+              <a href="product.php">Retail Beans</a>
             </li>
           </ul>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Roasting Process">
-          <a class="nav-link" href="roasting.php">
+          <a class="nav-link" href="../roasting.php">
             <i class="fa fa-fw fa-wrench"></i>
             <span class="nav-link-text">Roasting Process</span>
           </a>
         </li>
-
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Customers">
-          <a class="nav-link" href="costumerList.php">
+          <a class="nav-link" href="../customer/costumerList.php">
             <i class="fa fa-fw fa-table"></i>
             <span class="nav-link-text">Customers</span>
           </a>
@@ -75,20 +74,19 @@ $sql = $con->query($qry);
        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
           <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplePages" data-parent="#exampleAccordion">
             <i class="fa fa-fw fa-file"></i>
-            <span class="nav-link-text">Transactions</span>
+             <span class="nav-link-text">Transactions</span>
           </a>
           <ul class="sidenav-second-level collapse" id="collapseExamplePages">
             <li>
               <a href="order.php">Product Order</a>
             </li>
           </ul>
-          </li>
         </li>
 
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
           <a class="nav-link" href="#">
             <i class="fa fa-fw fa-link"></i>
-            <span class="nav-link-text">hapt na</span>
+            <span class="nav-link-text">wala pa</span>
           </a>
         </li>
       </ul>
@@ -101,7 +99,7 @@ $sql = $con->query($qry);
       </ul>
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
+          <a class="nav-link" href="auth/auth.php?logout">
             <i class="fa fa-fw fa-sign-out"></i>Logout</a>
         </li>
       </ul>
@@ -119,9 +117,14 @@ $sql = $con->query($qry);
       <!-- Example DataTables Card-->
       <div class="card mb-3">
         <div class="card-header">
-          <i class="fa fa-table"></i> Customer List</div>
-          <br />
-          <a class="btn btn-info btn-block" href="addCusto.php"> Add Customer </a>
+          <i class="fa fa-table"></i> Customer List
+            <div class="btn-group" style="float:right;">
+                    <a id="acquire" class="btn btn-success" href="addCusto.php">
+                        Add Customer <i class="fa fa-plus"></i>
+                    </a>
+                  </div>
+        </div>
+          <br/>
         <div class="card-body">
           <div class="table-responsive">
 <!-- begin table -->
@@ -203,7 +206,7 @@ $sql = $con->query($qry);
     <footer class="sticky-footer">
       <div class="container">
         <div class="text-center">
-          <small>Copyright © Kape Iligan 2017</small>
+          <small>Copyright © ClearGlass 2017</small>
         </div>
       </div>
     </footer>
@@ -212,23 +215,7 @@ $sql = $con->query($qry);
       <i class="fa fa-angle-up"></i>
     </a>
     <!-- Logout Modal-->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">×</span>
-            </button>
-          </div>
-          <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-          <div class="modal-footer">
-            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-            <a class="btn btn-primary" href="login.html">Logout</a>
-          </div>
-        </div>
-      </div>
-    </div>
+    
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

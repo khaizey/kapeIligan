@@ -73,7 +73,7 @@
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Customers">
-          <a class="nav-link" href="costumerList.php">
+          <a class="nav-link" href="customer/costumerList.php">
             <i class="fa fa-fw fa-table"></i>
             <span class="nav-link-text">Customers</span>
           </a>
