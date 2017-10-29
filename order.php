@@ -1,5 +1,5 @@
 <?php
-  require "../lib/class_lib.php";
+  require "lib/class_lib.php";
   $db = new db_connect();
   $con = $db->connection_db();
 
@@ -32,7 +32,7 @@
           <div class="form-group">
             <div class="form-row">
               <div class="col-md-6">
-                <label for="beanType">Bean Type</label>
+                <label for="beanType">Bean Name</label>
                 <select class="form-control" name="beans">
                      <option value="0">--Select--</option>
                             <?php
@@ -53,11 +53,10 @@
                               }
                             ?>
                           </select>
-
               </div>
               <div class="col-md-6">
-                <label for="exampleInputLastName">Last name</label>
-                <input class="form-control" id="exampleInputLastName" type="text" aria-describedby="nameHelp" placeholder="Enter last name">
+                <label for="exampleInputLastName">Qty(g)</label>
+                
               </div>
             </div>
           </div>
