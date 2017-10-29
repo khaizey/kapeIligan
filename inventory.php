@@ -42,15 +42,15 @@
           </a>
           <ul class="sidenav-second-level collapse" id="collapseComponents">
             <li>
-             <a href="invent/raw.php">Raw Products</a>
+             <a href="invent/raw.php">Raw Beans</a>
             </li>
             <li>
-              <a href="#">Non-Walk In</a>
+              <a href="product.php">Retail Beans</a>
             </li>
           </ul>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Roasting Process">
-          <a class="nav-link" href="roasting.php">
+         <a class="nav-link" href="roasting.php">
             <i class="fa fa-fw fa-wrench"></i>
             <span class="nav-link-text">Roasting Process</span>
           </a>

@@ -51,15 +51,15 @@
           </a>
           <ul class="sidenav-second-level collapse" id="collapseComponents">
             <li>
-             <a href="#">Raw Products</a>
+             <a href="invent/raw.php">Raw Beans</a>
             </li>
             <li>
-              <a href="#">Non-Walk In</a>
+              <a href="product.php">Retail Beans</a>
             </li>
           </ul>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Roasting Process">
-          <a class="nav-link" href="roasting.php">
+          <a class="nav-link" href="../roasting.php">
             <i class="fa fa-fw fa-wrench"></i>
             <span class="nav-link-text">Roasting Process</span>
           </a>
@@ -121,14 +121,16 @@
       <!-- Area Chart Example-->
       <div class="card mb-3">
         <div class="card-header">
-          <i class="fa fa-table"></i> Raw Table </div>
-
-        <div class="card-body">
-                  <div class="btn-group">
+          <i class="fa fa-table"></i> Raw Beans 
+                 <div class="btn-group" style="float:right;">
                     <button id="acquire" class="btn btn-success">
-                    Acquire <i class="fa fa-plus"></i>
+                        Acquire <i class="fa fa-plus"></i>
                     </button>
                   </div>
+        </div>
+
+        <div class="card-body">
+                  
               <div class="table-responsive">
     <!-- begin table -->
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">

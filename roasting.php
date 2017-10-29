@@ -60,10 +60,10 @@
           </a>
           <ul class="sidenav-second-level collapse" id="collapseComponents">
             <li>
-             <a href="invent/raw.php">Raw Products</a>
+             <a href="invent/raw.php">Raw Beans</a>
             </li>
             <li>
-              <a href="#">Non-Walk In</a>
+             <a href="product.php">Retail Beans</a>
             </li>
           </ul>
         </li>
@@ -186,7 +186,7 @@
                   <th>Coffee Source</th>
                   <th>Raw Beans (g)</th>
                   <th>Roasted Beans (g)</th>
-                  <th>Action</th>
+                  <th>action</th>
                 </tr>
               </tfoot>
               <tbody>

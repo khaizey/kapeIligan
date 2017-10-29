@@ -28,24 +28,28 @@
       <div class="card-body">
         <form>
           <div class="form-group">
-            <div class="form-row">
+            <div class="form-group">
+            <label for="customerName">Customer Name</label>
+            <input class="form-control" id="customerName" type="text" aria-describedby="emailHelp" placeholder="Customer Name">
+          </div>
+            <div class="form-row">          
               <div class="col-md-6">
                 <label for="beanName">Bean Type</label>
-                <select class="form-control" name="beans">
+                <select class="form-control" name="productName">
                      <option value="0">--Select--</option>
                             <?php
-                              $statement = "SELECT * FROM `bean`";
+                              $statement = "SELECT Distinct `productName` from `product`";
                               $res = $con->query($statement);
                               
                               while($resu = $res->fetch_object()) {
                             ?>
                                 <option 
                                   <?php 
-                                    if(isset($_POST['beans'])){
-                                      echo $_POST['beans'] == $resu->beansId? "selected": "";
+                                    if(isset($_POST['productName'])){
+                                      echo $_POST['productName'] == $resu->productId? "selected": "";
                                     }  
-                                  ?> value='<?php echo $resu->beansId; ?>'>
-                                  <?php echo $resu->beansName; ?>
+                                  ?> value='<?php echo $resu->productId; ?>'>
+                                  <?php echo $resu->productName; ?>
                      </option>;
                             <?php
                               }
@@ -54,21 +58,21 @@
               </div>
               <div class="col-md-6">
                 <label for="orderQty">Qty(g)</label>
-                 <select class="form-control" name="beans">
+                 <select class="form-control" name="qty">
                      <option value="0">--Select--</option>
                             <?php
-                              $statement = "SELECT * FROM `bean`";
+                              $statement = "SELECT DISTINCT `productVolume` FROM `product` ";
                               $res = $con->query($statement);
                               
                               while($resu = $res->fetch_object()) {
                             ?>
                                 <option 
                                   <?php 
-                                    if(isset($_POST['beans'])){
-                                      echo $_POST['beans'] == $resu->beansId? "selected": "";
+                                    if(isset($_POST['qty'])){
+                                      echo $_POST['qty'] == $resu->productId? "selected": "";
                                     }  
-                                  ?> value='<?php echo $resu->beansId; ?>'>
-                                  <?php echo $resu->beansName; ?>
+                                  ?> value='<?php echo $resu->productId; ?>'>
+                                  <?php echo $resu->productVolume; ?>
                      </option>;
                             <?php
                               }
