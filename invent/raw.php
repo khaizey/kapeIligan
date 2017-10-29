@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title>SB Admin - Start Bootstrap Template</title>
+  <title>Kape Iligan - Product Inventory System</title>
   <!-- Bootstrap core CSS-->
   <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom fonts for this template-->
@@ -29,16 +29,24 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-          <a class="nav-link" href="index.php">
+          <a class="nav-link" href="../index.php">
             <i class="fa fa-fw fa-dashboard"></i>
             <span class="nav-link-text">Dashboard</span>
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Inventory">
-          <a class="nav-link" href="inventory.php">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
             <i class="fa fa-fw fa-area-chart"></i>
             <span class="nav-link-text">Inventory</span>
           </a>
+          <ul class="sidenav-second-level collapse" id="collapseComponents">
+            <li>
+             <a href="invent/raw.php">Raw Products</a>
+            </li>
+            <li>
+              <a href="#">Non-Walk In</a>
+            </li>
+          </ul>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Customers">
           <a class="nav-link" href="costumerList.php">
@@ -104,25 +112,20 @@
                   
                   <div class="btn-group">
                     <button id="sample_editable_1_new" class="btn btn-success">
-                    Add Beans <i class="fa fa-plus"></i>
+                    Acquire <i class="fa fa-plus"></i>
                     </button>
                   </div>
-                  <div class="btn-group">
-                    <button id="sample_editable_1_new" class="btn btn-success">
-                    Add Acquire <i class="fa fa-plus"></i>
-                    </button>
-                  </div>
-                    <table class="table table-striped table-bordered table-hover" id="sample_1">
+                    <table class="table table-striped table-bordered table-hover" id="raw">
                     <thead>
                       <tr>
                         <th>
-                          Beans Type
+                          Bean Type
                         </th>
                         <th>
                           Volume
                         </th>
                         <th>
-                          Date Delivered
+                          Date Acquired
                         </th>
                         <th>
                           Supplier
@@ -172,6 +175,7 @@
         </div>
       </div>
     </div>
+    
     <!-- Bootstrap core JavaScript-->
     <script src="../vendor/jquery/jquery.min.js"></script>
     <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -186,13 +190,14 @@
     <!-- Custom scripts for this page-->
     <script src="../js/sb-admin-datatables.min.js"></script>
     <script src="../js/sb-admin-charts.min.js"></script>
+
+    <script src="../js/raw.js"></script>
   </div>
 </body>
 
 <script>
 jQuery(document).ready(function() {    
-   App.init(); // initlayout and core plugins
-
+   raw.init();
 });
 </script>
 
