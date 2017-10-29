@@ -1,3 +1,26 @@
+var d = new Date();
+var getTot = daysInMonth(d.getMonth(),d.getFullYear());
+console.log(daysInMonth(d.getMonth(),d.getFullYear()))
+var sat = new Array();
+var sun = new Array();
+
+for(var i=1;i<=getTot;i++){
+    var newDate = new Date(d.getFullYear(),d.getMonth(),i)
+    console.log(i+"-"+newDate.getDay());
+    if(newDate.getDay()==0){
+        sat.push(i)
+    }
+    if(newDate.getDay()==6){
+        sun.push(i)
+    }
+    
+}
+console.log(sat);
+console.log(sun);
+function daysInMonth(month,year) {
+    return new Date(year, month, 0).getDate();
+}
+
 // Chart.js scripts
 // -- Set new default font family and font color to mimic Bootstrap's default styling
 Chart.defaults.global.defaultFontFamily = '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
@@ -7,7 +30,7 @@ var ctx = document.getElementById("myAreaChart");
 var myLineChart = new Chart(ctx, {
   type: 'line',
   data: {
-    labels: ["Mar 1", "Mar 2", "Mar 3", "Mar 4", "Mar 5", "Mar 6", "Mar 7", "Mar 8", "Mar 9", "Mar 10", "Mar 11", "Mar 12", "Mar 13"],
+    labels: sat,
     datasets: [{
       label: "Sessions",
       lineTension: 0.3,
