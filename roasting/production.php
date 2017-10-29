@@ -1,5 +1,11 @@
 <?php		
-	include("connect.php");
+	  require "../lib/class_lib.php";
+	  $db = new db_connect();
+	  $conn = $db->connection_db();
+
+	  if( !isset( $_SESSION['username'] ) ){
+	    echo "<script>window.location = '../auth';</script>";
+	  }
 	
 	if(isset($_POST['proc_date'])) {
 		$new_date =$_POST['proc_date'];
