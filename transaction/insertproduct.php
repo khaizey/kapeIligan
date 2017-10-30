@@ -1,5 +1,5 @@
 <?php
-include("lib/class_lib.php");
+include("../lib/class_lib.php");
 $conn = new db_connect();
 $con = $conn -> connection_db();
 
@@ -11,7 +11,7 @@ $productdebt = $_GET['productdebt'];
 $productquantity = $_GET['productquantity'];
 
 if(empty($productquantity)){
-	echo '<div class = "notification">Please specify Quantity!</div>';
+	echo 'quant';
 	exit();
 }
 
@@ -41,7 +41,27 @@ $stmt = mysqli_query($con, $query);
 // simple query  
 $stmtinsert = $con->query($queryinsert);
 if($stmtinsert){
-	echo '<div class = "notification">Succesfull!</div>';
+
+	$findthisquery = "SELECT * FROM accntspayable t1 INNER JOIN product t2 on t1.productId = t2.productId ORDER by accntsId DESC LIMIT 1";
+$thisstmt = mysqli_query($con, $findthisquery);
+    while($row = mysqli_fetch_assoc($thisstmt)){
+    	$debtQty = $row['debtQty'];
+    	$debtDate = $row['debtDate'];
+    	$debtPayment = $row['debtPayment'];
+    	$customerId = $row['customerId'];
+    	$productId = $row['productId'];
+    	$productName = $row['productName'];
+    	$productVolume = $row['productVolume'];
+    	$productPrice = $row['productPrice'];
+
+    	$totalprice = $debtQty*$productPrice;
+
+
+echo '<div class = "col-md-12">Price: '.$productPrice.', Quantity: '.$debtQty.', Date: '.$debtDate.', Product: '.$productName.', Volume: '.$productVolume.', Total Payables: '.$totalprice.'</div>';
+}
+
+
+	echo 'Succesfull!';
 }
 else{
 	echo '<script language="JavaScript" type="text/javascript">';
@@ -53,15 +73,16 @@ else{
 	echo '<div class = "notification">Please Select Product</div>';
 }
 }else{
-	echo '<div class = "notification">No Customer!</div>';
+	echo "addcusto";
+	// echo '<div class = "notification">No Customer!</div>';
 
-	echo '<input style = "width:100%;" type = "text" id = "newLastname" placeholder = "Last Name">';	
-	echo '<input style = "width:100%;" type = "text" id = "newFirstname" placeholder = "First Name">';	
-	echo '<input style = "width:100%;" type = "text" id = "BirthDate" placeholder = "Birthdate">';		
-	echo '<input style = "width:100%;" type = "text" id = "address" placeholder = "address">';	
-	echo '<input style = "width:100%;" type = "text" id = "contactnumber" placeholder = "contactnumber">';	
-	echo '<input style = "width:100%;" type = "text" id = "email" placeholder = "email">';
-	echo '<button name = "newcustomer" onclick = "addnewcustomer()">New Customer</button>';	
+	// echo '<input style = "width:100%;" type = "text" id = "newLastname" placeholder = "Last Name">';	
+	// echo '<input style = "width:100%;" type = "text" id = "newFirstname" placeholder = "First Name">';	
+	// echo '<input style = "width:100%;" type = "text" id = "BirthDate" placeholder = "Birthdate">';		
+	// echo '<input style = "width:100%;" type = "text" id = "address" placeholder = "address">';	
+	// echo '<input style = "width:100%;" type = "text" id = "contactnumber" placeholder = "contactnumber">';	
+	// echo '<input style = "width:100%;" type = "text" id = "email" placeholder = "email">';
+	// echo '<button name = "newcustomer" onclick = "addnewcustomer()">New Customer</button>';	
 }
 
 ?>
