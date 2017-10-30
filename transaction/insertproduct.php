@@ -25,6 +25,18 @@ $cosFirstname = $pieces[1];
 	$cosFirstname = 'none';
 }
 
+// if (strpos($productdebt, "-") !== false) {
+$ppieces = explode("-", $productdebt);
+$theproductName = $ppieces[0];
+$theproductVolume = $ppieces[1];
+// }else{
+// }
+$prodsfinder = "SELECT * FROM product WHERE productName = '$theproductName' AND productVolume = '$theproductVolume'";
+$prodstmt = mysqli_query($con, $prodsfinder);
+    while($row = mysqli_fetch_assoc($prodstmt)){
+    	$productdebtf = $row['productId'];
+    }
+
 $countquery = "SELECT * FROM customer WHERE cosLastname = '$cosLastname' AND cosFirstname = '$cosFirstname'";
 $result=mysqli_query($con,$countquery);
 $rowcount=mysqli_num_rows($result);
@@ -36,8 +48,8 @@ $stmt = mysqli_query($con, $query);
     	$debtorid = $row['customerId'];
     	}
 
-	if($productdebt !=0){
-	$queryinsert = "INSERT INTO accntspayable(debtQty, debtDate, debtPayment, customerId, productId) VALUES ('$productquantity', 'test' , '0' , '$debtorid', '$productdebt');";  
+	if($productdebt != 'null'){
+	$queryinsert = "INSERT INTO accntspayable(debtQty, debtDate, debtPayment, customerId, productId) VALUES ('$productquantity', 'test' , '0' , '$debtorid', '$productdebtf');";  
 // simple query  
 $stmtinsert = $con->query($queryinsert);
 if($stmtinsert){

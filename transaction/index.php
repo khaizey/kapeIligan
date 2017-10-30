@@ -374,7 +374,7 @@
           alert("Succesfull!");
         }
         else if( this.responseText == "Psectprod"){
-          alert("Please enter a product!");
+          alert("Please select a product");
         }
       }
     };
@@ -434,6 +434,7 @@ function viewdebt(onager) {
       if( this.responseText == "successfully" ){
         alert("successfully pay!");
          $('#debtsModal').modal('hide'); 
+         window.location = 'index.php';
       }
      // document.getElementById("paymentnotify").innerHTML = this.responseText;
         //viewdebt(ide);

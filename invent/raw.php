@@ -156,7 +156,7 @@
                     ?>
                       <tr>
                         <td><?php echo $resu->beansName;?></td>
-                        <td><?php echo $total;?></td>
+                        <td><?php echo $total. ' g';?></td>
                         <td><?php echo $resu->dateAcquired;?></td>
                         <td><?php echo $resu->supplier;?></td>
                       </tr>
