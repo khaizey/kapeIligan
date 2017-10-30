@@ -32,14 +32,14 @@
   <!-- Navigation-->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
     <img src="../images/logo.png" style="height:50px;padding-right:10px;" alt="logo">
-    <a class="navbar-brand" href="../index.php">Kape Iligan</a>
+    <a class="navbar-brand" href="../">Kape Iligan</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-          <a class="nav-link" href="../index.php">
+          <a class="nav-link" href="../">
             <i class="fa fa-fw fa-dashboard"></i>
             <span class="nav-link-text">Dashboard</span>
           </a>
@@ -51,22 +51,22 @@
           </a>
           <ul class="sidenav-second-level collapse" id="collapseComponents">
             <li>
-             <a href="#">Raw Products</a>
+             <a href="../invent/raw.php">Raw Beans</a>
             </li>
             <li>
-              <a href="#">Non-Walk In</a>
+              <a href="../product/packProduct.php">Retail Beans</a>
             </li>
           </ul>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Roasting Process">
-          <a class="nav-link" href="roasting.php">
+          <a class="nav-link" href="../roasting/roasting.php">
             <i class="fa fa-fw fa-wrench"></i>
             <span class="nav-link-text">Roasting Process</span>
           </a>
         </li>
 
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Customers">
-          <a class="nav-link" href="costumerList.php">
+          <a class="nav-link" href="../customer/costumerList.php">
             <i class="fa fa-fw fa-table"></i>
             <span class="nav-link-text">Customers</span>
           </a>
@@ -79,20 +79,17 @@
           </a>
           <ul class="sidenav-second-level collapse" id="collapseExamplePages">
             <li>
-              <a href="login.php">Login Page</a>
-            </li>
-            <li>
-              <a href="register.php">Registration Page</a>
+              <a href="#">Product Order</a>
             </li>
           </ul>
         </li>
 
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
+        <!-- <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
           <a class="nav-link" href="#">
             <i class="fa fa-fw fa-link"></i>
-            <span class="nav-link-text">wala pa</span>
+            <span class="nav-link-text">hapt na</span>
           </a>
-        </li>
+        </li> -->
       </ul>
       <ul class="navbar-nav sidenav-toggler">
         <li class="nav-item">
@@ -103,25 +100,25 @@
       </ul>
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link" href="../auth/auth.php?logout">
+          <a class="nav-link" href="auth/auth.php?logout">
             <i class="fa fa-fw fa-sign-out"></i>Logout</a>
         </li>
       </ul>
     </div>
   </nav>
-  <div class="content-wrapper">
+  ../<div class="content-wrapper">
     <div class="container-fluid">
       <!-- Breadcrumbs-->
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
           <a href="#">Dashboard</a>
         </li>
-        <li class="breadcrumb-item active">Transaction</li>
+        <li class="breadcrumb-item active">Product Order</li>
       </ol>
       <!-- Area Chart Example-->
       <div class="card mb-3">
         <div class="card-header">
-          <i class="fa fa-file"></i> Transaction</div>
+          <i class="fa fa-file"></i> Product Order</div>
         <div class="card-body">
           <div class="row">
               <div class="col-md-12">

@@ -1,5 +1,5 @@
 <?php
-  require "../lib/class_lib.php";
+  require "lib/class_lib.php";
   $db = new db_connect();
   $con = $db->connection_db();
 
@@ -77,7 +77,7 @@
           </a>
           <ul class="sidenav-second-level collapse" id="collapseExamplePages">
             <li>
-              <a href="order.php">Product Order</a>
+              <a href="Transaction">Product Order</a>
             </li>
           </ul>
         </li>
