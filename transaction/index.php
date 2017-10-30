@@ -116,7 +116,7 @@
         <li class="breadcrumb-item">
           <a href="#">Dashboard</a>
         </li>
-        <li class="breadcrumb-item active">Raw</li>
+        <li class="breadcrumb-item active">Transaction</li>
       </ol>
       <!-- Area Chart Example-->
       <div class="card mb-3">
@@ -230,9 +230,9 @@
                                     <td>".$contactNum."</td>
                                     <td>".$email."</td>
                                     <td>".$totalpaid."</td>
-                                    <td>".$balance."</td>
-                                    <td><button data-toggle='modal' data-target='#debtsModal' name = 'viewdebts'  class='btn btn-info btn-block' onclick = 'name('".$cosLastname.", ".$cosFirstname."'); viewdebt(".$value.");>view debts</button></td>
-                                  </tr>";
+                                    <td>".$balance."</td>";
+                                    echo '<td><button name = "viewdebts"  class="btn btn-info btn-block" onclick = "names(\''.$cosLastname.', '.$cosFirstname.'\'); viewdebt('.$value.');">view debts</button></td>
+                                  </tr>';
                               }
                               ?>
                             
@@ -278,7 +278,8 @@
             </button>
           </div>
           <div class="modal-body" id="debts">
-
+            <div id = "paymentnotify"></div>
+            </div>
           </div>
           <div class="modal-footer">
             <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
@@ -308,10 +309,10 @@
 
 
    <script type="text/javascript">
-    function name(foo){
-      alert("s")
+    function names(foo){
+     //alert("s")
       document.getElementById("debtLabel").innerHTML = foo;
-
+      $('#debtsModal').modal('show'); 
     }
         function codeAddress() {
             
@@ -401,7 +402,6 @@ function viewdebt(onager) {
   var xmlhttpmain = new XMLHttpRequest();
   xmlhttpmain.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-      alert(this.responseText)
       document.getElementById("debts").innerHTML = this.responseText;
     }
   };
@@ -436,20 +436,24 @@ function viewdebt(onager) {
         xmlhttpmain.send();
     }
 
-    function pay(ide) {
-            
-      
-        var xmlhttpmain = new XMLHttpRequest();
-        xmlhttpmain.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("paymentnotify").innerHTML = this.responseText;
-                viewdebt(ide);
-            }
-        };
-         amount = document.getElementById("topay").value;
-        xmlhttpmain.open("GET", "paymentfunction.php?amount="+amount+"&ide="+ide, true);
-        xmlhttpmain.send();
-    }
+  function pay(ide) {
+
+
+    var xmlhttpmain = new XMLHttpRequest();
+    xmlhttpmain.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      if( this.responseText == "successfully" ){
+        alert("successfully pay!");
+         $('#debtsModal').modal('hide'); 
+      }
+     // document.getElementById("paymentnotify").innerHTML = this.responseText;
+        //viewdebt(ide);
+      }
+    };
+    amount = document.getElementById("topay").value;
+    xmlhttpmain.open("GET", "paymentfunction.php?amount="+amount+"&ide="+ide, true);
+    xmlhttpmain.send();
+  }
 
         
         window.onload = codeAddress;
