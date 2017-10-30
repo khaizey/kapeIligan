@@ -57,11 +57,11 @@ $thisstmt = mysqli_query($con, $findthisquery);
     	$totalprice = $debtQty*$productPrice;
 
 
-echo '<div class = "col-md-12">Price: '.$productPrice.', Quantity: '.$debtQty.', Date: '.$debtDate.', Product: '.$productName.', Volume: '.$productVolume.', Total Payables: '.$totalprice.'</div>';
+
 }
 
+echo 'Success';
 
-	echo 'Succesfull!';
 }
 else{
 	echo '<script language="JavaScript" type="text/javascript">';
@@ -70,7 +70,7 @@ else{
 	echo '</script>';
 }
 }else{
-	echo '<div class = "notification">Please Select Product</div>';
+	echo 'Psectprod';
 }
 }else{
 	echo "addcusto";
