@@ -61,7 +61,7 @@ echo '<div class = "col-md-12">Price: '.$productPrice.', Quantity: '.$debtQty.',
 }
 
 
-	echo '<div class = "notification">Succesfull!</div>';
+	echo 'Succesfull!';
 }
 else{
 	echo '<script language="JavaScript" type="text/javascript">';

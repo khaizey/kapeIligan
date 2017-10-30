@@ -121,7 +121,7 @@
       <!-- Area Chart Example-->
       <div class="card mb-3">
         <div class="card-header">
-          <i class="fa fa-table"></i> Raw Info</div>
+          <i class="fa fa-file"></i> Transaction</div>
         <div class="card-body">
           <div class="row">
               <div class="col-md-12">
@@ -158,7 +158,45 @@
                     </div>
                     <div class="form-actions">
                       <button name = "addtodebt" class="btn btn-info" onclick = "adddebtbutton()">Add</button>
-                      <button type="button" class="btn btn-default">Cancel</button>
+                    </div>
+                  </div>
+                    
+                </div>
+                <!-- END EXAMPLE TABLE PORTLET-->
+              </div>
+            </div>
+        </div>
+        <div class="card-footer small text-muted"></div>
+      </div>
+      <div class="card mb-3">
+        <div class="card-header">
+          <i class="fa fa-file"></i> Debts</div>
+        <div class="card-body">
+          <div class="row">
+              <div class="col-md-12">
+                <!-- BEGIN EXAMPLE TABLE PORTLET-->
+                <div class="portlet box blue">
+                  
+                  <div class="portlet-body form">
+                    <div class="form-body">
+                      <div class="form-group">
+                        <label for="customer name">Customer name</label>
+                        <div class="input-group">
+                          <input type = "text" class="form-control" name  = "customerview" id = "customerfinder" onkeyup = "customersearch()" placeholder="customer name" list = "customerlistings">
+                          <datalist id="customerlistings">
+                          </datalist>
+                          <button name="searchcustomer" onclick="customerlister()">Search</button>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class = "customerlist" id = "customerlist">
+                        <!-- CALL FROM PHP FILE
+                        echo '<div class = "col-md-12">'.$cosLastname.' '.$cosFirstname.' '.$birthDate.' '.$address.' '.$contactNum.' '.$email.' Cash Received: '.$totalpaid.' Balance: '.$balance.'<button name = "viewdebts" onclick = "viewdebt('.$value.')">view debts</button> </div>'; -->
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-actions">
+                      <button name = "addtodebt" class="btn btn-info" onclick = "adddebtbutton()">Add</button>
                     </div>
                   </div>
                     
@@ -275,6 +313,9 @@
         else if( this.responseText == "addcusto" ){
           window.location = '../customer/addCusto.php';
         }
+        else if( this.responseText == "Succesfull!" ){
+          alert("Succesfull");
+        }
       }
     };
     debtorname = document.getElementById("customersearch").value;
@@ -342,7 +383,7 @@
     }
 
         
-        window.onload = codeAddress;
+        //window.onload = codeAddress;
     
         
        

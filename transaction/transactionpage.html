@@ -77,36 +77,32 @@ echo '<button onclick = "pay('.$debtorid.')">Pay</button>'; -->
 
 
    <script type="text/javascript">
-        function codeAddress() {
-            
-      
-        var xmlhttpmain = new XMLHttpRequest();
-        xmlhttpmain.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("theproducts").innerHTML = this.responseText;
-                customerlister();
-            }
-        };
-         //theid = window.localStorage.getItem("userid");
-        xmlhttpmain.open("GET", "products.php?viewingproducts=1", true);
-        xmlhttpmain.send();
-    
-    }
-        function customerlister() {
-            
-      
-        var xmlhttpmain = new XMLHttpRequest();
-        xmlhttpmain.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("customerlist").innerHTML = this.responseText;
-            }
-        };
-         //theid = window.localStorage.getItem("userid");
-                 customer = document.getElementById("customerfinder").value;
-        xmlhttpmain.open("GET", "customerlist.php?viewingcustomers=1&thiscustomer="+customer, true);
-        xmlhttpmain.send();
-    
-    }
+function codeAddress() {
+    var xmlhttpmain = new XMLHttpRequest();
+    xmlhttpmain.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("theproducts").innerHTML = this.responseText;
+            customerlister();
+        }
+    };
+    //theid = window.localStorage.getItem("userid");
+    xmlhttpmain.open("GET", "products.php?viewingproducts=1", true);
+    xmlhttpmain.send();
+
+}
+function customerlister() {
+    var xmlhttpmain = new XMLHttpRequest();
+    xmlhttpmain.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          document.getElementById("customerlist").innerHTML = this.responseText;
+        }
+    };
+    //theid = window.localStorage.getItem("userid");
+    customer = document.getElementById("customerfinder").value;
+    xmlhttpmain.open("GET", "customerlist.php?viewingcustomers=1&thiscustomer="+customer, true);
+    xmlhttpmain.send();
+
+}
         function customersearch() {
             
       
