@@ -124,26 +124,24 @@
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
               <thead>
                 <tr>
-                  <th>Customer Name</th>
-                  <th>Ordered Product</th>
-                  <th>Date Ordered</th>
-                  <th>Total Payment</th>
-                  <th>Date Paid</th>
-                  <th>Cash Received</th>
-                  <th>Balance</th>
-                  <th>Transactions</th>
+                 <th> Last Name</th>
+                  <th> First Name</th>
+                  <th> Birthdate</th>
+                  <th> Address</th>
+                  <th> Contact Number</th>
+                  <th> Email</th>
+                  <th> Action</th>
                 </tr>
               </thead>
               <tfoot>
                 <tr>
-                  <th>Customer Name</th>
-                  <th>Ordered Product</th>
-                  <th>Date Ordered</th>
-                  <th>Total Payment</th>
-                  <th>Date Paid</th>
-                  <th>Cash Received</th>
-                  <th>Balance</th>
-                  <th>Transactions</th>
+                  <th> Last Name</th>
+                  <th> First Name</th>
+                  <th> Birthdate</th>
+                  <th> Address</th>
+                  <th> Contact Number</th>
+                  <th> Email</th>
+                  <th> Action</th>
                 </tr>
               </tfoot>
               <tbody>
@@ -154,7 +152,6 @@
                   <td>3000</td>
                   <td>2011/04/25</td>
                   <td>3,000</td>
-                  <td>0.00</td>
                   <td><input type="submit" name="edit" class="btn btn-info btn-block" value="View"></td>
                 </tr>
                 <tr>
@@ -164,7 +161,6 @@
                   <td>3800</td>
                   <td>2011/07/25</td>
                   <td>3,000</td>
-                  <td>800</td>
                   <td><input type="submit" name="edit" class="btn btn-info btn-block" value="View"></td>
                 </tr>
                  <tr>
@@ -174,7 +170,6 @@
                   <td>1,750</td>
                   <td>2011/08/25</td>
                   <td>750</td>
-                  <td>1,000</td>
                   <td><input type="submit" name="edit" class="btn btn-info btn-block" value="View"></td>
                 </tr>
               </tbody>
