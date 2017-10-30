@@ -139,7 +139,7 @@
         <li class="breadcrumb-item">
           <a href="#">Dashboard</a>
         </li>
-        <li class="breadcrumb-item active">Roasting Process</li>
+        <li class="breadcrumb-item active">Product Inventory</li>
       </ol>
 
       <!-- Example DataTables Card-->
