@@ -267,12 +267,8 @@
             <div id = "paymentnotify"></div>
             </div>
           </div>
-<<<<<<< HEAD
-          
-=======
           <div class="modal-footer">
           </div>
->>>>>>> 5ad00b88d8320e833ab77fa7ce38e804fdb75995
         </div>
       </div> 
     </div>
