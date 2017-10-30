@@ -22,7 +22,7 @@ if(!empty($productsinput)){
 		$productQty = $row['productQty'];
 		$productPrice = $row['productPrice'];
 
-		echo '<option value = '.$value.'>'.$productName.'</option>';
+		echo '<option value = '.$value.'>'.$productName.' '.$productVolume.'grams x '.$productQty.'</option>';
 	}
 			echo '</select>';
 }
