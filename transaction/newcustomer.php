@@ -4,7 +4,7 @@ $conn = new db_connect();
 $con = $conn -> connection_db();
 
 
- 		$newLastname = $_GET['newLastname'];
+        $newLastname = $_GET['newLastname'];
         $newFirstname = $_GET['newFirstname'];
         $BirthDate = $_GET['BirthDate'];
         $address = $_GET['address'];

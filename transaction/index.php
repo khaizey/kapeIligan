@@ -83,13 +83,6 @@
             </li>
           </ul>
         </li>
-
-        <!-- <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
-          <a class="nav-link" href="#">
-            <i class="fa fa-fw fa-link"></i>
-            <span class="nav-link-text">hapt na</span>
-          </a>
-        </li> -->
       </ul>
       <ul class="navbar-nav sidenav-toggler">
         <li class="nav-item">
@@ -100,7 +93,7 @@
       </ul>
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link" href="auth/auth.php?logout">
+          <a class="nav-link" href="../auth/auth.php?logout">
             <i class="fa fa-fw fa-sign-out"></i>Logout</a>
         </li>
       </ul>
@@ -111,7 +104,7 @@
       <!-- Breadcrumbs-->
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <a href="#">Dashboard</a>
+          <a href="../index.php">Dashboard</a>
         </li>
         <li class="breadcrumb-item active">Product Order</li>
       </ol>
@@ -132,18 +125,14 @@
                         <div class="input-group">
                           <input type = "text" class="form-control" id = "customersearch" name = "customername" placeholder="customer name" onkeyup = "customerinput()" list = "list">
                           <datalist id="list">
+
                           </datalist>
                         </div>
                       </div>
                       <div class="form-group">
                         <label for="exampleInputEmail1">Product:</label>
                         <div id = "theproducts">
-                        <!-- Call FROM PHP FILE
-                        Product:
-                        <select value = "0" name = "product" id = "productselected">
-                        <option value = "0">none</option>';
-                        <option value = "'.$value.'">'.$productName.'</option>';
-                        </select> -->
+      
                         </div>
                       </div>
                       <div class="form-group">
@@ -278,9 +267,14 @@
             <div id = "paymentnotify"></div>
             </div>
           </div>
+<<<<<<< HEAD
           
+=======
+          <div class="modal-footer">
+          </div>
+>>>>>>> 5ad00b88d8320e833ab77fa7ce38e804fdb75995
         </div>
-      </div>
+      </div> 
     </div>
     
     <!-- Bootstrap core JavaScript-->
@@ -378,8 +372,11 @@
         else if( this.responseText == "addcusto" ){
           window.location = '../customer/addCusto.php';
         }
-        else if( this.responseText == "Succesfull!" ){
-          alert("Succesfull");
+        else if( this.responseText == "Success" ){
+          alert("Succesfull!");
+        }
+        else if( this.responseText == "Psectprod"){
+          alert("Please enter a product!");
         }
       }
     };

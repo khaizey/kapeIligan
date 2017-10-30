@@ -8,7 +8,11 @@ if(isset($_GET['viewingproducts'])){
 if(isset($_GET['keysearch'])){
 	$keysearch = $_GET['keysearch'];
 }
+	
 if(!empty($productsinput)){
+		echo '
+		<select name = "product" class="form-control" id = "productselected">
+		<option value = "0">none</option>';
 	$query = "SELECT * FROM product";
 	$stmt = mysqli_query($con, $query);
 	while($row = mysqli_fetch_assoc($stmt)){
@@ -17,12 +21,10 @@ if(!empty($productsinput)){
 		$productVolume = $row['productVolume'];
 		$productQty = $row['productQty'];
 		$productPrice = $row['productPrice'];
-		echo '
-		<select value = "0" name = "product" class="form-control" id = "productselected">
-		<option value = "0">none</option>';
-		echo '<option value = "'.$value.'">'.$productName.'</option>';
-		echo '</select>';
+
+		echo '<option value = '.$value.'>'.$productName.'</option>';
 	}
+			echo '</select>';
 }
 if(!empty($keysearch)){
 	$query = "SELECT * FROM customer WHERE cosLastname LIKE '%$keysearch%' OR cosFirstname LIKE '%$keysearch%'";
