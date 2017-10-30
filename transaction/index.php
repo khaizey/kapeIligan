@@ -179,24 +179,70 @@
                   
                   <div class="portlet-body form">
                     <div class="form-body">
-                      <div class="form-group">
-                        <label for="customer name">Customer name</label>
-                        <div class="input-group">
-                          <input type = "text" class="form-control" name  = "customerview" id = "customerfinder" onkeyup = "customersearch()" placeholder="customer name" list = "customerlistings">
-                          <datalist id="customerlistings">
-                          </datalist>
-                          <button name="searchcustomer" onclick="customerlister()">Search</button>
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <div class = "customerlist" id = "customerlist">
-                        <!-- CALL FROM PHP FILE
-                        echo '<div class = "col-md-12">'.$cosLastname.' '.$cosFirstname.' '.$birthDate.' '.$address.' '.$contactNum.' '.$email.' Cash Received: '.$totalpaid.' Balance: '.$balance.'<button name = "viewdebts" onclick = "viewdebt('.$value.')">view debts</button> </div>'; -->
-                        </div>
+                      <div class="table-responsive">
+    <!-- begin table -->
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                          <thead>
+                            <tr>
+                              <th>Name</th>
+                              <th>Birthdate</th>
+                              <th>Address</th>
+                              <th>Contact</th>
+                              <th>Email</th>
+                              <th>Cash Received</th>
+                              <th>Balance</th>
+                              <th>Tools</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <?php
+                              $query = "SELECT * FROM customer";
+                              $stmt = mysqli_query($con, $query);
+                              while($row = mysqli_fetch_assoc($stmt)){
+                                $value = $row['customerId'];
+                                $cosLastname = $row['cosLastname'];
+                                $cosFirstname = $row['cosFirstname'];
+                                $birthDate = $row['birthDate'];
+                                $address = $row['address'];
+                                $contactNum = $row['contactNum'];
+                                $email = $row['email'];
+
+                                $totaldebts = 0;
+                                $totalpaid = 0;
+                                $insidequery = "SELECT * FROM accntspayable t1 INNER JOIN product t2 on t1.productId = t2.productId WHERE customerId = '$value' ";
+                                $insidestmt = mysqli_query($con, $insidequery);
+                                  while($row = mysqli_fetch_assoc($insidestmt)){
+                                      $debtQty = $row['debtQty'];
+                                      $productPrice = $row['productPrice'];
+                                      $totalprice = $debtQty*$productPrice;
+                                      $debtPayment = $row['debtPayment'];
+                                      $totaldebts = $totaldebts + $totalprice;
+                                      $totalpaid = $totalpaid + $debtPayment;
+                                  }
+
+
+                                  $balance = $totaldebts - $totalpaid;
+                                 
+                                  echo "<tr>
+                                    <td>".$cosLastname.", ".$cosFirstname."</td>
+                                    <td>".$birthDate."</td>
+                                    <td>".$address."</td>
+                                    <td>".$contactNum."</td>
+                                    <td>".$email."</td>
+                                    <td>".$totalpaid."</td>
+                                    <td>".$balance."</td>
+                                    <td><button data-toggle='modal' data-target='#debtsModal' name = 'viewdebts'  class='btn btn-info btn-block' onclick = 'name('".$cosLastname.", ".$cosFirstname."'); viewdebt(".$value.");>view debts</button></td>
+                                  </tr>";
+                              }
+                              ?>
+                            
+                          </tbody>
+                        </table>
+            <!-- end table -->
                       </div>
                     </div>
                     <div class="form-actions">
-                      <button name = "addtodebt" class="btn btn-info" onclick = "adddebtbutton()">Add</button>
+                      
                     </div>
                   </div>
                     
@@ -222,6 +268,25 @@
     <a class="scroll-to-top rounded" href="#page-top">
       <i class="fa fa-angle-up"></i>
     </a>
+    <div class="modal fade" id="debtsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="display: none;">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="debtLabel">Ready to Leave?</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body" id="debts">
+
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+            <a class="btn btn-primary" href="login.html">Logout</a>
+          </div>
+        </div>
+      </div>
+    </div>
     
     <!-- Bootstrap core JavaScript-->
     <script src="../vendor/jquery/jquery.min.js"></script>
@@ -243,6 +308,11 @@
 
 
    <script type="text/javascript">
+    function name(foo){
+      alert("s")
+      document.getElementById("debtLabel").innerHTML = foo;
+
+    }
         function codeAddress() {
             
       
@@ -250,7 +320,7 @@
         xmlhttpmain.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 document.getElementById("theproducts").innerHTML = this.responseText;
-                customerlister();
+               
             }
         };
          //theid = window.localStorage.getItem("userid");
@@ -327,20 +397,19 @@
     xmlhttpmain.send();
   }
 
-      function viewdebt(onager) {
-            
-      
-        var xmlhttpmain = new XMLHttpRequest();
-        xmlhttpmain.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("debtlists").innerHTML = this.responseText;
-            }
-        };
-        // keysearch = document.getElementById("customersearch").value;
-         //theid = window.localStorage.getItem("userid");
-        xmlhttpmain.open("GET", "debtslistofcustomer.php?debtorid="+onager, true);
-        xmlhttpmain.send();
+function viewdebt(onager) {
+  var xmlhttpmain = new XMLHttpRequest();
+  xmlhttpmain.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      alert(this.responseText)
+      document.getElementById("debts").innerHTML = this.responseText;
     }
+  };
+  // keysearch = document.getElementById("customersearch").value;
+  //theid = window.localStorage.getItem("userid");
+  xmlhttpmain.open("GET", "debtslistofcustomer.php?debtorid="+onager, true);
+  xmlhttpmain.send();
+}
       function addnewcustomer() {
             
       
@@ -383,7 +452,7 @@
     }
 
         
-        //window.onload = codeAddress;
+        window.onload = codeAddress;
     
         
        
