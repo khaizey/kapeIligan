@@ -30,15 +30,16 @@
             <label for="Password">Password</label>
             <input class="form-control" name="password" required type="password" placeholder="Password">
           </div>
-          <button type="submit" class="btn btn-primary btn-block" name="login"> Login</button> 
+          <button type="submit" class="btn btn-primary btn-block" name="login"> Login</button>
+
+            <div class="container">
+              <div class="text-center">
+                <small>Copyright © ClearGlass 2017</small>
+              </div>
+            </div>
+          
         </form>
-        <footer class="sticky-footer">
-      <div class="container">
-        <div class="text-center">
-          <small>Copyright © ClearGlass 2017</small>
-        </div>
-      </div>
-    </footer>
+
       </div>
     </div>
   </div>
