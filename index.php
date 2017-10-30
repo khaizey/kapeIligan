@@ -1,3 +1,12 @@
+<?php
+  require "../lib/class_lib.php";
+  $db = new db_connect();
+  $con = $db->connection_db();
+
+  if( !isset( $_SESSION['username'] ) ){
+    echo "<script>window.location = '../auth';</script>";
+  }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

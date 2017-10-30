@@ -1,8 +1,11 @@
 <?php
-include('../lib/class_lib.php');
+  require "../lib/class_lib.php";
+  $db = new db_connect();
+  $con = $db->connection_db();
 
-$db_conn = new db_connect();
-$con = $db_conn->connection_db();
+  if( !isset( $_SESSION['username'] ) ){
+    echo "<script>window.location = '../auth';</script>";
+  }
 ?>
 
 <!DOCTYPE html>
