@@ -132,12 +132,7 @@
                       <div class="form-group">
                         <label for="exampleInputEmail1">Product:</label>
                         <div id = "theproducts">
-                        <!-- Call FROM PHP FILE
-                        Product:
-                        <select value = "0" name = "product" id = "productselected">
-                        <option value = "0">none</option>';
-                        <option value = "'.$value.'">'.$productName.'</option>';
-                        </select> -->
+      
                         </div>
                       </div>
                       <div class="form-group">
@@ -375,8 +370,11 @@
         else if( this.responseText == "addcusto" ){
           window.location = '../customer/addCusto.php';
         }
-        else if( this.responseText == "Succesfull!" ){
-          alert("Succesfull");
+        else if( this.responseText == "Success" ){
+          alert("Succesfull!");
+        }
+        else if( this.responseText == "Psectprod"){
+          alert("Please enter a product!");
         }
       }
     };
