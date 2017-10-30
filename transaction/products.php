@@ -25,7 +25,7 @@ if(!empty($productsinput)){
 		$productPrice = $row['productPrice'];
 	
 		if($currentvolume!=$productVolume){
-			if($currentname != 'none'){echo '<option value = "'.$currentname.'-'.$currentvolume.'">'.$currentname.' '.$currentvolume.' remaining: '.$qtytotal.'</option>';}
+			if($currentname != 'none'){echo '<option value = "'.$currentname.'-'.$currentvolume.'">'.$currentname.', '.$currentvolume.' g, remaining: '.$qtytotal.'</option>';}
 			else{echo '<option value = "null">none</option>';}
 			$currentname = $productName;
 			$currentvolume = $productVolume;
