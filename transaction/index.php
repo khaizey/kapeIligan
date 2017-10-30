@@ -254,11 +254,12 @@
     <a class="scroll-to-top rounded" href="#page-top">
       <i class="fa fa-angle-up"></i>
     </a>
-    <div class="modal fade" id="debtsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="display: none;">
-      <div class="modal-dialog" role="document">
+
+    <div class="modal fade" id="debtsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="display:none;">
+      <div class="modal-dialog" role="document" style="max-width: 1000px;">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="debtLabel">Ready to Leave?</h5>
+            <h5 class="modal-title" id="debtLabel"></h5>
             <button class="close" type="button" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">×</span>
             </button>
@@ -271,6 +272,7 @@
           </div>
         </div>
       </div> 
+
     </div>
     
     <!-- Bootstrap core JavaScript-->
