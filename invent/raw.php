@@ -156,7 +156,11 @@
                     ?>
                       <tr>
                         <td><?php echo $resu->beansName;?></td>
+<<<<<<< HEAD
                         <td><?php echo $total;?> <b>g</b></td>
+=======
+                        <td><?php echo $total. ' g';?></td>
+>>>>>>> ed0e713f0269840b20facae779cd38d928e7eea0
                         <td><?php echo $resu->dateAcquired;?></td>
                         <td><?php echo $resu->supplier;?></td>
                       </tr>
