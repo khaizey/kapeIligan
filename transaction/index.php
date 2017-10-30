@@ -268,7 +268,7 @@
     var xmlhttpmain = new XMLHttpRequest();
     xmlhttpmain.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
-        alert(this.responseText)
+        
         if( this.responseText == "quant" ){
           alert("Please specify Quantity!");
         }
