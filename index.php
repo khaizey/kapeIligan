@@ -4,7 +4,7 @@
   $con = $db->connection_db();
 
   if( !isset( $_SESSION['username'] ) ){
-    echo "<script>window.location = '../auth';</script>";
+    echo "<script>window.location = 'auth';</script>";
   }
 ?>
 <!DOCTYPE html>
