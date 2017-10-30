@@ -73,7 +73,7 @@ else{
 	echo '<div class = "notification">Please Select Product</div>';
 }
 }else{
-	echo "<script>window.location = '../auth';</script>"
+	echo "addcusto";
 	// echo '<div class = "notification">No Customer!</div>';
 
 	// echo '<input style = "width:100%;" type = "text" id = "newLastname" placeholder = "Last Name">';	

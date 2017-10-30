@@ -272,7 +272,9 @@
         if( this.responseText == "quant" ){
           alert("Please specify Quantity!");
         }
-       
+        else if( this.responseText == "addcusto" ){
+          window.location = '../customer/addCusto.php';
+        }
       }
     };
     debtorname = document.getElementById("customersearch").value;
