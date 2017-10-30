@@ -129,58 +129,37 @@
                 <div class="portlet box blue">
                   
                   <div class="portlet-body form">
-                    <form role="form" method="post" action="add.php">
-                      <div class="form-body">
-                        <div class="form-group">
-                          <label for="exampleInputEmail1">Type of Beans</label>
-                          <select class="form-control" name="beans">
-                            <option value="0">--Select--</option>
-                            <?php
-                              $statement = "SELECT * FROM `bean`";
-                              $res = $con->query($statement);
-                              
-                              while($resu = $res->fetch_object()) {
-                            ?>
-                                <option 
-                                  <?php 
-                                    if(isset($_POST['beans'])){
-                                      echo $_POST['beans'] == $resu->beansId? "selected": "";
-                                    }  
-                                  ?> value='<?php echo $resu->beansId; ?>'>
-                                  <?php echo $resu->beansName; ?>
-                                </option>;
-                            <?php
-                              }
-                            ?>
-                          </select>
-                        </div>
-                        <div class="form-group">
-                          <label for="exampleInputPassword1">Volume</label>
-                          <div class="input-group">
-                            <input type="text" class="form-control" required name="volume" placeholder="Volume">
-                          </div>
-                          <span class="help-block">
-                             Input Volume in Grams
-                          </span>
-                        </div>
-                        <div class="form-group">
-                          <label for="exampleInputPassword1">Date Acquired</label>
-                          <div class="input-group">
-                            <input type="date" class="form-control" required name="date_acq" placeholder="Date Acquired">
-                          </div>
-                        </div>
-                        <div class="form-group">
-                          <label for="exampleInputPassword1">Supplier</label>
-                          <div class="input-group">
-                            <input type="text" class="form-control" required name="supplier" placeholder="Supplier">
-                          </div>
+                    <div class="form-body">
+                      <div class="form-group">
+                        <label for="customer name">Customer name</label>
+                        <div class="input-group">
+                          <input type = "text" class="form-control" id = "customersearch" name = "customername" placeholder="customer name" onkeyup = "customerinput()" list = "list">
+                          <datalist id="list">
+                          </datalist>
                         </div>
                       </div>
-                      <div class="form-actions">
-                        <button type="submit" name="add" class="btn btn-info">Add</button>
-                        <button type="button" class="btn btn-default">Cancel</button>
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">Product:</label>
+                        <div id = "theproducts">
+                        <!-- Call FROM PHP FILE
+                        Product:
+                        <select value = "0" name = "product" id = "productselected">
+                        <option value = "0">none</option>';
+                        <option value = "'.$value.'">'.$productName.'</option>';
+                        </select> -->
+                        </div>
                       </div>
-                    </form>
+                      <div class="form-group">
+                        <label for="exampleInputPassword1">Quantity</label>
+                        <div class="input-group">
+                          <input type="number" class="form-control" name="quantity" id="quantity" placeholder="amount">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-actions">
+                      <button name = "addtodebt" class="btn btn-info" onclick = "adddebtbutton()">Add</button>
+                      <button type="button" class="btn btn-default">Cancel</button>
+                    </div>
                   </div>
                     
                 </div>
@@ -223,10 +202,149 @@
   </div>
 </body>
 
-<script>
-jQuery(document).ready(function() {    
-   raw.init();
-});
+
+
+   <script type="text/javascript">
+        function codeAddress() {
+            
+      
+        var xmlhttpmain = new XMLHttpRequest();
+        xmlhttpmain.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("theproducts").innerHTML = this.responseText;
+                customerlister();
+            }
+        };
+         //theid = window.localStorage.getItem("userid");
+        xmlhttpmain.open("GET", "products.php?viewingproducts=1", true);
+        xmlhttpmain.send();
+    
+    }
+  function customerlister() {
+    var xmlhttpmain = new XMLHttpRequest();
+    xmlhttpmain.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        document.getElementById("customerlist").innerHTML = this.responseText;
+      }
+    };
+    //theid = window.localStorage.getItem("userid");
+    customer = document.getElementById("customerfinder").value;
+    xmlhttpmain.open("GET", "customerlist.php?viewingcustomers=1&thiscustomer="+customer, true);
+    xmlhttpmain.send();
+
+  }
+        function customersearch() {
+            
+      
+        var xmlhttpmain = new XMLHttpRequest();
+        xmlhttpmain.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("customerlistings").innerHTML = this.responseText;
+            }
+        };
+         //theid = window.localStorage.getItem("userid");
+                 customer = document.getElementById("customerfinder").value;
+        xmlhttpmain.open("GET", "customersearchlist.php?keysearch="+customer, true);
+        xmlhttpmain.send();
+    
+    }
+            function customerinput() {
+            
+      
+        var xmlhttpmain = new XMLHttpRequest();
+        xmlhttpmain.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("list").innerHTML = this.responseText;
+            }
+        };
+        keysearch = document.getElementById("customersearch").value;
+         //theid = window.localStorage.getItem("userid");
+        xmlhttpmain.open("GET", "products.php?keysearch="+keysearch, true);
+        xmlhttpmain.send();
+    }
+
+
+  function adddebtbutton() {
+    var xmlhttpmain = new XMLHttpRequest();
+    xmlhttpmain.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        alert(this.responseText)
+        if( this.responseText == "quant" ){
+          alert("Please specify Quantity!");
+        }
+       
+      }
+    };
+    debtorname = document.getElementById("customersearch").value;
+    productdebt = document.getElementById("productselected").value;
+    productquantity = document.getElementById("quantity").value;
+
+
+    xmlhttpmain.open("GET", "insertproduct.php?debtorname="+debtorname+"&productdebt="+productdebt+"&productquantity="+productquantity, true);
+    xmlhttpmain.send();
+  }
+
+      function viewdebt(onager) {
+            
+      
+        var xmlhttpmain = new XMLHttpRequest();
+        xmlhttpmain.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("debtlists").innerHTML = this.responseText;
+            }
+        };
+        // keysearch = document.getElementById("customersearch").value;
+         //theid = window.localStorage.getItem("userid");
+        xmlhttpmain.open("GET", "debtslistofcustomer.php?debtorid="+onager, true);
+        xmlhttpmain.send();
+    }
+      function addnewcustomer() {
+            
+      
+        var xmlhttpmain = new XMLHttpRequest();
+        xmlhttpmain.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("response").innerHTML = this.responseText;
+            }
+        };
+        // keysearch = document.getElementById("customersearch").value;
+         //theid = window.localStorage.getItem("userid");
+         newLastname = document.getElementById("newLastname").value;
+         newFirstname = document.getElementById("newFirstname").value;
+         BirthDate = document.getElementById("BirthDate").value;
+         address = document.getElementById("address").value;
+         contactnumber = document.getElementById("contactnumber").value;
+         email = document.getElementById("email").value;
+        xmlhttpmain.open("GET", "newcustomer.php?newLastname="+newLastname
+          +"&newFirstname="+newFirstname
+          +"&BirthDate="+BirthDate
+          +"&address="+address
+          +"&contactnumber="+contactnumber
+          +"&email="+email, true);
+        xmlhttpmain.send();
+    }
+
+    function pay(ide) {
+            
+      
+        var xmlhttpmain = new XMLHttpRequest();
+        xmlhttpmain.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("paymentnotify").innerHTML = this.responseText;
+                viewdebt(ide);
+            }
+        };
+         amount = document.getElementById("topay").value;
+        xmlhttpmain.open("GET", "paymentfunction.php?amount="+amount+"&ide="+ide, true);
+        xmlhttpmain.send();
+    }
+
+        
+        window.onload = codeAddress;
+    
+        
+       
+        </script>      
 </script>
 
 </html>

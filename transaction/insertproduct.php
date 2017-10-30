@@ -11,7 +11,7 @@ $productdebt = $_GET['productdebt'];
 $productquantity = $_GET['productquantity'];
 
 if(empty($productquantity)){
-	echo '<div class = "notification">Please specify Quantity!</div>';
+	echo 'quant';
 	exit();
 }
 
@@ -73,15 +73,16 @@ else{
 	echo '<div class = "notification">Please Select Product</div>';
 }
 }else{
-	echo '<div class = "notification">No Customer!</div>';
+	echo "<script>window.location = '../auth';</script>"
+	// echo '<div class = "notification">No Customer!</div>';
 
-	echo '<input style = "width:100%;" type = "text" id = "newLastname" placeholder = "Last Name">';	
-	echo '<input style = "width:100%;" type = "text" id = "newFirstname" placeholder = "First Name">';	
-	echo '<input style = "width:100%;" type = "text" id = "BirthDate" placeholder = "Birthdate">';		
-	echo '<input style = "width:100%;" type = "text" id = "address" placeholder = "address">';	
-	echo '<input style = "width:100%;" type = "text" id = "contactnumber" placeholder = "contactnumber">';	
-	echo '<input style = "width:100%;" type = "text" id = "email" placeholder = "email">';
-	echo '<button name = "newcustomer" onclick = "addnewcustomer()">New Customer</button>';	
+	// echo '<input style = "width:100%;" type = "text" id = "newLastname" placeholder = "Last Name">';	
+	// echo '<input style = "width:100%;" type = "text" id = "newFirstname" placeholder = "First Name">';	
+	// echo '<input style = "width:100%;" type = "text" id = "BirthDate" placeholder = "Birthdate">';		
+	// echo '<input style = "width:100%;" type = "text" id = "address" placeholder = "address">';	
+	// echo '<input style = "width:100%;" type = "text" id = "contactnumber" placeholder = "contactnumber">';	
+	// echo '<input style = "width:100%;" type = "text" id = "email" placeholder = "email">';
+	// echo '<button name = "newcustomer" onclick = "addnewcustomer()">New Customer</button>';	
 }
 
 ?>
